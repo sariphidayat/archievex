@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AchieveX - Bookmarks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Prompt:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .font-prompt { font-family: 'Prompt', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#2a244d] text-white min-h-screen flex flex-col">
+
+    <header class="sticky top-0 z-[100] w-full h-16 md:h-20 bg-[#FFF8EE] flex items-center justify-between px-4 md:px-10 shadow-md">
+        <div class="flex items-center gap-3 md:gap-6">
+            <a href="index.html" class="flex-shrink-0">
+                <img src="assets/gambar/icon.png" class="h-10 md:h-14 w-auto object-contain" alt="Logo">
+            </a>
+            <nav class="flex items-center gap-2 md:gap-4 text-[#333333]">
+                <a href="index.html" class="text-[10px] md:text-sm font-semibold hover:text-purple-600">Home</a>
+                <div class="w-[1px] h-3 bg-gray-300"></div>
+                <a href="bookmark.html" class="text-[10px] md:text-sm font-bold text-purple-700 underline decoration-2 underline-offset-4">Bookmark</a>
+                <div class="w-[1px] h-3 bg-gray-300"></div>
+                <a href="other.html" class="text-[10px] md:text-sm font-semibold hover:text-purple-600">Other</a>
+            </nav>
+        </div>
+
+        <div class="flex items-center gap-2 md:gap-4">
+            <div class="flex items-center bg-white px-2 md:px-3 py-1 rounded-full border border-gray-200 shadow-sm">
+                <input type="text" id="search-input" placeholder="Cari bookmark..." class="bg-transparent outline-none text-[10px] md:text-xs w-14 sm:w-24 md:w-32 text-gray-700">
+                <img src="assets/gambar/search.png" class="w-3 md:w-4 h-3 md:h-4 opacity-50" alt="Search">
+            </div>
+            <a href="account.html" class="flex-shrink-0">
+                <img src="assets/gambar/Setting.png" class="w-5 md:w-6 h-5 md:h-6 opacity-80" alt="Settings">
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow flex justify-center p-4 md:p-10">
+        <div class="bg-[#5A527A] w-full max-w-[1100px] min-h-[500px] rounded-[30px] md:rounded-[40px] p-6 md:p-10 flex flex-col items-center shadow-2xl border border-white/10">
+            
+            <h2 class="font-prompt text-[#FFD700] text-lg md:text-2xl font-bold tracking-widest uppercase border-b-2 border-[#FFD700] pb-2 mb-10 text-center">
+                BOOKMARK KAMU
+            </h2>
+
+            <div class="w-full flex-grow flex items-center justify-center">
+                <div id="empty-state" class="hidden flex-col items-center text-center">
+                    <h1 class="text-xl md:text-3xl font-bold mb-2">Kamu Belum Membuat Bookmark...</h1>
+                    <p class="text-white/50 text-xs md:text-base">Cari komik favoritmu sekarang!</p>
+                </div>
+
+                <div id="bookmark-list" class="hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-6 w-full"></div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const searchInput = document.getElementById('search-input');
+        const listContainer = document.getElementById('bookmark-list');
+        const emptyState = document.getElementById('empty-state');
+
+        function renderBookmarks(data = null) {
+            const bookmarks = data || JSON.parse(localStorage.getItem('myBookmarks')) || [];
+
+            if (bookmarks.length === 0) {
+                listContainer.classList.add('hidden');
+                emptyState.classList.replace('hidden', 'flex');
+                return;
+            }
+
+            emptyState.classList.replace('flex', 'hidden');
+            listContainer.classList.replace('hidden', 'grid');
+            listContainer.innerHTML = '';
+
+            bookmarks.forEach((comic) => {
+                const allData = JSON.parse(localStorage.getItem('myBookmarks')) || [];
+                const originalIndex = allData.findIndex(b => b.title === comic.title);
+
+                listContainer.innerHTML += `
+                    <div class="relative bg-[#3B3267] rounded-xl overflow-hidden border border-white/5 transition-all hover:border-[#FFD700]/50 shadow-md">
+                        <a href="${comic.link}">
+                            <img src="${comic.image}" class="w-full aspect-[3/4] object-cover block">
+                            <div class="p-2 md:p-3 text-center">
+                                <h3 class="text-[#FFD700] text-[10px] md:text-sm font-bold truncate">${comic.title}</h3>
+                                <p class="text-[#FFD700]/70 text-[9px] md:text-xs italic truncate">${comic.subtitle}</p>
+                            </div>
+                        </a>
+                        <button onclick="removeBookmark(event, ${originalIndex})" 
+                            class="absolute top-1 right-1 bg-red-500 text-white text-[8px] md:text-[10px] font-bold px-2 py-0.5 rounded shadow-md z-10">
+                            HAPUS
+                        </button>
+                    </div>`;
+            });
+        }   
+
+        searchInput.addEventListener('input', (e) => {
+            const keyword = e.target.value.toLowerCase();
+            const allBookmarks = JSON.parse(localStorage.getItem('myBookmarks')) || [];
+            const filtered = allBookmarks.filter(c => 
+                c.title.toLowerCase().includes(keyword) || 
+                c.subtitle.toLowerCase().includes(keyword)
+            );
+            renderBookmarks(filtered);
+        });
+
+    function removeBookmark(event, index) {
+        event.preventDefault();
+        let bookmarks = JSON.parse(localStorage.getItem('myBookmarks')) || [];
+        bookmarks.splice(index, 1);
+        localStorage.setItem('myBookmarks', JSON.stringify(bookmarks));
+        searchInput.value = '';
+        renderBookmarks();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => renderBookmarks());
+    </script>
+</body>
+</html>
