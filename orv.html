@@ -16,21 +16,33 @@
 
     <header class="fixed top-0 z-[100] w-full h-16 md:h-20 bg-[#FFF8EE] flex items-center justify-between px-4 md:px-10 shadow-lg">
         <div class="flex items-center gap-6">
-            <a href="index.html"><img src="assets/gambar/icon.png" class="h-10 md:h-14 w-auto" alt="Logo"></a>
-            <nav class="hidden md:flex items-center gap-4 text-[#333333] font-semibold text-sm">
+            <a href="index.html" class="flex items-center">
+                <img src="assets/gambar/icon.png" 
+                class="w-[150px] md:w-[220px] h-auto object-contain block scale-125 origin-left" 
+                alt="Logo">
+            </a>
+        
+            <nav id="mobile-menu" class="hidden absolute top-16 left-0 w-full bg-[#FFF8EE] flex-col p-4 gap-4 shadow-lg md:static md:flex md:flex-row md:w-auto md:p-0 md:shadow-none md:top-auto text-[#333333] font-semibold text-sm">
                 <a href="index.html" class="hover:text-purple-600 transition">Home</a>
-                <div class="w-px h-4 bg-gray-300"></div>
+                <div class="hidden md:block w-px h-4 bg-gray-300"></div>
                 <a href="bookmark.html" class="hover:text-purple-600 transition">Bookmark</a>
-                <div class="w-px h-4 bg-gray-300"></div>
+                <div class="hidden md:block w-px h-4 bg-gray-300"></div>
                 <a href="#" class="hover:text-purple-600 transition">Other</a>
             </nav>
         </div>
+
         <div class="flex items-center gap-4">
             <div class="flex items-center bg-white px-3 py-1 rounded-full border border-gray-200">
-                <input type="text" placeholder="Cari komik..." class="bg-transparent outline-none text-xs w-24 md:w-32 text-gray-700">
+                <input type="text" id="search-input" placeholder="Cari bookmark..." class="bg-transparent outline-none text-xs w-24 md:w-32 text-gray-700">
                 <img src="assets/gambar/search.png" class="w-4 h-4 opacity-40" alt="Search">
             </div>
             <a href="account.html"><img src="assets/gambar/Setting.png" class="w-6 h-6 opacity-80" alt="Settings"></a>
+        
+            <button onclick="toggleMenu()" class="md:hidden flex flex-col gap-1">
+                <div class="w-6 h-0.5 bg-gray-800"></div>
+                <div class="w-6 h-0.5 bg-gray-800"></div>
+                <div class="w-6 h-0.5 bg-gray-800"></div>
+            </button>
         </div>
     </header>
 
@@ -187,6 +199,12 @@
 
     <script>
         const currentComic = { id: "orv-01", title: "Omniscient Reader's Viewpoint", subtitle: "Action, Fantasy", image: "assets/gambar/bebeb.jpg", link: "orv.html" };
+
+        const toggleMenu = () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex'); // Supaya pas muncul bentuknya flex (kebawah)
+        };
 
         const switchTab = (tab) => {
             const isChap = tab === 'chapters';
