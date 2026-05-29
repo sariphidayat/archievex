@@ -1,68 +1,54 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AchieveX - Baca Komik Favoritmu</title>
     <link rel="stylesheet" href="index.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Prompt:wght@700&display=swap"
-        rel="stylesheet">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="alpine.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Prompt:wght@700&display=swap" rel="stylesheet">
 </head>
+<body>
 
-<body x-data="myApp()" x-init="init()">
-
-    <header
-        class="fixed top-0 z-[100] w-full h-16 md:h-20 bg-[#FFF8EE] flex items-center justify-between px-4 md:px-10 shadow-lg">
-        <div class="flex items-center gap-6">
-            <a href="index.html" class="flex items-center">
-                <img src="assets/gambar/icon.png"
-                    class="w-[150px] md:w-[220px] h-auto object-contain block scale-125 origin-left" alt="Logo" />
-            </a>
-
-            <nav id="mobile-menu" :class="{'hidden': !mobileMenuOpen, 'flex': mobileMenuOpen}"
-                class="absolute top-16 left-0 w-full bg-[#FFF8EE] flex-col p-4 gap-4 shadow-lg md:static md:flex md:flex-row md:w-auto md:p-0 md:shadow-none md:top-auto text-[#333333] font-semibold text-sm">
-                <a href="index.html" class="hover:text-purple-600 transition">Home</a>
-                <div class="hidden md:block w-px h-4 bg-gray-300"></div>
-                <a href="bookmark.html" class="hover:text-purple-600 transition">Bookmark</a>
-                <div class="hidden md:block w-px h-4 bg-gray-300"></div>
-                <a href="#" class="hover:text-purple-600 transition">Other</a>
+    <header class="navbar">
+        <div class="header-left">
+            <div class="logo-wrapper">
+                <a href="index.html">
+                    <img src="assets/gambar/icon.png" class="logo-icon" alt="Logo AchieveX" />
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <div class="divider"></div>
+                <a href="bookmark.html">Bookmark</a>
+                <div class="divider"></div>
+                <a href="other.html">Other</a>
             </nav>
         </div>
 
-        <div class="flex items-center gap-4">
-            <div class="flex items-center bg-white px-3 py-1 rounded-full border border-gray-200">
-                <input type="text" id="search-input" placeholder="Cari bookmark..."
-                    class="bg-transparent outline-none text-xs w-24 md:w-32 text-gray-700">
-                <img src="assets/gambar/search.png" class="w-4 h-4 opacity-40" alt="Search">
+        <div class="nav-icons">
+            <div class="search-container">
+                <input type="text" placeholder="Cari komik..." class="search-input" />
+                <img src="assets/gambar/search.png" alt="Search icon" class="icon-small" />
             </div>
-            <a href="account.html"><img src="assets/gambar/Setting.png" class="w-6 h-6 opacity-80" alt="Settings"></a>
-
-            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden flex flex-col gap-1">
-                <div class="w-6 h-0.5 bg-gray-800"></div>
-                <div class="w-6 h-0.5 bg-gray-800"></div>
-                <div class="w-6 h-0.5 bg-gray-800"></div>
-            </button>
+            <div class="divider"></div>
+            <a href="account.html">
+                <img src="assets/gambar/Setting.png" alt="Settings icon" class="icon-small" />
+            </a>
         </div>
     </header>
 
     <section class="hero-wrapper">
         <div id="banner-slider">
-            <button class="btn-slider prev" @click="manualMove(-1)">&#10094;</button>
-            <button class="btn-slider next" @click="manualMove(1)">&#10095;</button>
+            <button class="btn-slider prev" onclick="manualMove(-1)">&#10094;</button>
+            <button class="btn-slider next" onclick="manualMove(1)">&#10095;</button>
 
             <div class="slider-track" id="sliderTrack">
                 <div class="slide">
                     <img src="assets/gambar/slider.png" alt="Featured Stories Banner">
                     <div class="hero-text">
                         <h1>Read Your<br>Favorite Stories</h1>
-                        <p>Koleksi komik terbaru dan terlengkap dalam satu genggaman. Nikmati pengalaman baca yang
-                            mulus.</p>
-                        <a href="orv.html" class="btn-start" style="text-decoration: none; display: inline-block;">Start
-                            Reading</a>
+                        <p>Koleksi komik terbaru dan terlengkap dalam satu genggaman. Nikmati pengalaman baca yang mulus.</p>
+                        <a href="orv.html" class="btn-start" style="text-decoration: none; display: inline-block;">Start Reading</a>
                     </div>
                 </div>
                 <div class="slide"><img src="assets/gambar/bannerfr.jpg" alt="Frieren Banner"></div>
@@ -80,9 +66,9 @@
                 <p>Lagu Skenario</p>
                 <span>Omniscient Reader's Viewpoint</span>
             </div>
-            <button id="btnORV" @click="togglePlayPause('audioORV', 'btnORV')" class="btn-play-custom"></button>
+            <button id="btnORV" onclick="togglePlayPause('audioORV', 'btnORV')" class="btn-play-custom"></button>
         </div>
-
+        
         <div class="music-card">
             <audio id="audioFrieren" preload="metadata">
                 <source src="assets/musik/fren_theme.mpeg" type="audio/mpeg">
@@ -91,16 +77,14 @@
                 <p>Audio Perjalanan</p>
                 <span>Frieren: Beyond Journey's End</span>
             </div>
-            <button id="btnFrieren" @click="togglePlayPause('audioFrieren', 'btnFrieren')"
-                class="btn-play-custom"></button>
-            <!-- <button id="btnFrieren" @click="console.log('test')" class="btn-play-custom"></button> -->
+            <button id="btnFrieren" onclick="togglePlayPause('audioFrieren', 'btnFrieren')" class="btn-play-custom"></button>
         </div>
     </section>
 
     <main class="comic-container">
         <div class="comic-grid">
-
-            <a href="detail.html?id=orv-01" class="card" style="text-decoration: none;">
+            
+            <a href="orv.html" class="card" style="text-decoration: none;">
                 <div class="card-image">
                     <img src="assets/gambar/bebeb.jpg" class="cover" alt="Cover ORV" loading="lazy" />
                     <img src="assets/gambar/kr_flag.jpg" class="flag" alt="KR" />
@@ -111,7 +95,7 @@
                 </div>
             </a>
 
-            <a href="detail.html?id=frn-01" class="card" style="text-decoration: none;">
+            <a href="fren.html" class="card" style="text-decoration: none;">
                 <div class="card-image">
                     <img src="assets/gambar/reren.jpg" class="cover" alt="Cover Frieren" loading="lazy" />
                     <img src="assets/gambar/jp_flag.jpg" class="flag" alt="JP" />
@@ -122,7 +106,7 @@
                 </div>
             </a>
 
-            <a href="detail.html?id=scv-01" class="card" style="text-decoration: none;">
+            <a href="civil.html" class="card" style="text-decoration: none;">
                 <div class="card-image">
                     <img src="assets/gambar/ayang.jpg" class="cover" alt="Cover Civil Servant" loading="lazy" />
                     <img src="assets/gambar/kr_flag.jpg" class="flag" alt="KR" />
@@ -133,7 +117,7 @@
                 </div>
             </a>
 
-            <a href="detail.html?id=mdd-01" class="card" style="text-decoration: none;">
+            <a href="marin.html" class="card" style="text-decoration: none;">
                 <div class="card-image">
                     <img src="assets/gambar/gojo.jpg" class="cover" alt="My Dress-Up Darling" loading="lazy" />
                     <img src="assets/gambar/jp_flag.jpg" class="flag" alt="Japan Flag" />
@@ -144,7 +128,7 @@
                 </div>
             </a>
 
-            <a href="detail.html?id=srn-01" class="card" style="text-decoration: none;">
+            <a href="seren.html" class="card" style="text-decoration: none;">
                 <div class="card-image">
                     <img src="assets/gambar/sren.jpg" class="cover" alt="Serena" loading="lazy" />
                     <img src="assets/gambar/kr_flag.jpg" class="flag" alt="Korea Flag" />
@@ -155,7 +139,7 @@
                 </div>
             </a>
 
-            <a href="detail.html?id=kpr-01" class="card" style="text-decoration: none;">
+            <a href="peter.html" class="card" style="text-decoration: none;">
                 <div class="card-image">
                     <img src="assets/gambar/atok.jpg" class="cover" alt="Killer Peter" loading="lazy" />
                     <img src="assets/gambar/kr_flag.jpg" class="flag" alt="Korea Flag" />
@@ -166,7 +150,7 @@
                 </div>
             </a>
 
-            <a href="detail.html?id=dmd-01" class="card" style="text-decoration: none;">
+            <a href="dudu.html" class="card" style="text-decoration: none;">
                 <div class="card-image">
                     <img src="assets/gambar/dormdu.jpg" class="cover" alt="Dorm Du" loading="lazy" />
                     <img src="assets/gambar/id_flag.png" class="flag" alt="Indonesia Flag" />
@@ -177,10 +161,9 @@
                 </div>
             </a>
 
-            <a href="detail.html?id=fdm-01" class="card" style="text-decoration: none;">
+            <a href="prapa.html" class="card" style="text-decoration: none;">
                 <div class="card-image">
-                    <img src="assets/gambar/papa.jpg" class="cover" alt="Father I Dont Want This Marriage"
-                        loading="lazy" />
+                    <img src="assets/gambar/papa.jpg" class="cover" alt="Father I Dont Want This Marriage" loading="lazy" />
                     <img src="assets/gambar/kr_flag.jpg" class="flag" alt="Korea Flag" />
                 </div>
                 <div class="card-info">
@@ -189,7 +172,7 @@
                 </div>
             </a>
 
-            <a href="detail.html?id=ddn-01" class="card" style="text-decoration: none;">
+            <a href="dadan.html" class="card" style="text-decoration: none;">
                 <div class="card-image">
                     <img src="assets/gambar/dan.jpg" class="cover" alt="Dandadan" loading="lazy" />
                     <img src="assets/gambar/jp_flag.jpg" class="flag" alt="Japan Flag" />
@@ -200,7 +183,7 @@
                 </div>
             </a>
 
-            <a href="detail.html?id=tpv-01" class="card" style="text-decoration: none;">
+            <a href="lonalon.html" class="card" style="text-decoration: none;">
                 <div class="card-image">
                     <img src="assets/gambar/alon.jpg" class="cover" alt="Patron Of Villain" loading="lazy" />
                     <img src="assets/gambar/kr_flag.jpg" class="flag" alt="Korea Flag" />
@@ -211,7 +194,7 @@
                 </div>
             </a>
 
-            <a href="detail.html?id=mtx-01" class="card" style="text-decoration: none;">
+            <a href="toxon.html" class="card" style="text-decoration: none;">
                 <div class="card-image">
                     <img src="assets/gambar/trap.jpg" class="cover" alt="Marriage Toxin" loading="lazy" />
                     <img src="assets/gambar/jp_flag.jpg" class="flag" alt="Japan Flag" />
@@ -222,7 +205,7 @@
                 </div>
             </a>
 
-            <a href="detail.html?id=wmp-01" class="card" style="text-decoration: none;">
+            <a href="athy.html" class="card" style="text-decoration: none;">
                 <div class="card-image">
                     <img src="assets/gambar/end.jpg" class="cover" alt="Who Made Me A Princess" loading="lazy" />
                     <img src="assets/gambar/kr_flag.jpg" class="flag" alt="Korea Flag" />
@@ -233,7 +216,7 @@
                 </div>
             </a>
 
-            <a href="detail.html?id=php-01" class="card" style="text-decoration: none;">
+            <a href="playerh.html" class="card" style="text-decoration: none;">
                 <div class="card-image">
                     <img src="assets/gambar/hoyoul.jpg" class="cover" alt="The Player Hides His Past" loading="lazy" />
                     <img src="assets/gambar/kr_flag.jpg" class="flag" alt="Korea Flag" />
@@ -321,14 +304,13 @@
                 </div>
             </a>
 
-        </div>
-    </main>
+        </div> </main>
 
-    <footer class="footer text-center text-black/30 text-xs p-10">
-        <p>© 2026 ArchieveX. All Rights Reserved.</p>
+    <footer class="footer">
+        <p>© 2026 AchieveX. All Rights Reserved.</p>
     </footer>
 
-    <script type="text/javascript" src="script-alt.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
+ 

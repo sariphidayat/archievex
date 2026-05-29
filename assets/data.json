@@ -1,0 +1,452 @@
+[
+  {
+    "id": "orv-01",
+    "picture": "assets/gambar/bebeb.jpg",
+    "title": "Omniscient Reader Viewpoint",
+    "sub_title": "Perspektif Pembaca Mahatahu | 전지적 독자 시점",
+    "country": {
+        "name": "Korea",
+        "flag": "kr_flag.jpg"
+    },
+    "stars": "9.4",
+    "statistics": "50,616",
+    "views": "27.2m",
+    "description": "Kim Dokja adalah pekerja kantoran biasa yang minat satu-satunya adalah membaca novel web favoritnya 'Tiga Cara untuk Bertahan dari Kiamat'. Tetapi ketika novel itu tiba-tiba menjadi kenyataan, dia adalah satu-satunya orang yang tahu bagaimana dunia akan berakhir. Berbekal hal tersebut, Dokja menggunakan pemahamannya untuk mengubah jalannya cerita dan dunia seperti yang dia tahu.",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy",
+      "Demon",
+      "Shounen",
+      "Psychological"
+    ],
+    "authors": [
+      "Sing N Song"
+    ],
+    "artists": [
+      "Redice Studio",
+      "Sleepy-C",
+      "UMI"
+    ],
+    "format": "Manhwa",
+    "status": "On-Going",
+    "chapters": {
+      "start": 273,
+      "end": 308
+    },
+    "info_desc": "<p><strong>Jadwal:</strong> Setiap Senin malam.</p> <p><strong>Penerbit:</strong> WEBTOON Entertainment.</p> <p><strong>Sinopsis Singkat:</strong> Kisah perjuangan seorang pembaca tunggal di dunia yang hancur sesuai novel yang ia baca.</p>",
+    "read_link": "https://www.webtoons.com/id/fantasy/omniscient-reader/list?title_no=2109"
+  },
+  {
+    "id": "frn-01",
+    "picture": "assets/gambar/reren.jpg",
+    "title": "Frieren: Beyond Journey’s End",
+    "sub_title": "葬送のフリーレン",
+    "country": {
+        "name": "Japan",
+        "flag": "jp_flag.jpg"
+    },
+    "stars": "9.38",
+    "statistics": "65,514",
+    "views": "25.9m",
+    "description": "Setelah mengalahkan Raja Iblis, sang penyihir elf, Frieren, harus menghadapi kenyataan pahit: waktu baginya berjalan berbeda dengan teman-temannya yang manusia. Setelah kematian sang pahlawan, Himmel, Frieren memulai perjalanan baru untuk memahami arti \"waktu\" dan perasaan manusia yang selama ini ia abaikan.",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy",
+      "Drama",
+      "Comedy",
+      "Slice of Life"
+    ],
+    "authors": [
+      "Yamada Kanehito"
+    ],
+    "artists": [
+      "ABE Tsukasa"
+    ],
+    "format": "Manga",
+    "status": "On-Going",
+    "chapters": {
+      "start": 133,
+      "end": 147
+    },
+    "info_desc": "<p>Info di sini.</p>",
+    "read_link": "https://www.viz.com/frieren-beyond-journeys-end"
+  },
+  {
+    "id": "scv-01",
+    "picture": "assets/gambar/ayang.jpg",
+    "title": "Special Civil Servant",
+    "sub_title": "Extraordinary Civil Servant | 별정직 공무원",
+    "country": {
+        "name": "Korea",
+        "flag": "kr_flag.jpg"
+    },
+    "stars": "8.21",
+    "statistics": "348,963",
+    "views": "14.5m",
+    "description": "Setelah gagal menjadi PNS level 9 untuk keempat kalinya, Han Maru melewati banyak lika-liku hingga menjadi PNS khusus di bawah Kementerian Lingkungan Hidup. Tapi, ternyata pekerjaannya melibatkan tugas rahasia negara yang mempertaruhkan nyawa! Para monster datang ke dunia manusia bersama debu kuning, dan tugas Han Maru adalah berperang melawan mereka.",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy",
+      "Comedy"
+    ],
+    "authors": [
+      "Kwon Sora",
+      "Seo Jaewon"
+    ],
+    "artists": [
+      "Baesaem"
+    ],
+    "format": "Manhwa",
+    "status": "On-Going",
+    "chapters": {
+      "start": 53,
+      "end": 67
+    },
+    "info_desc": "<p>Info di sini.</p>",
+    "read_link": "https://www.webtoons.com/id/fantasy/special-civil-servant/list?title_no=7018"
+  },
+  {
+    "id": "mdd-01",
+    "picture": "assets/gambar/gojo.jpg",
+    "title": "My Dress-Up Darling",
+    "sub_title": "その着せ替え人形は恋をする",
+    "country": {
+        "name": "Japan",
+        "flag": "jp_flag.jpg"
+    },
+    "stars": "7.29",
+    "statistics": "33,517",
+    "views": " 31.0m",
+    "description": "Seorang siswa SMA yang menyukai boneka tradisional dan berbakat menjahit terlibat dalam pembuatan kostum cosplay untuk salah satu gadis tercantik dan terpopuler di kelasnya! Seiring hubungan pasangan yang unik ini semakin dekat, mereka pun mendapati diri mereka berada dalam situasi yang semakin berani!",
+    "genres": [
+      "Slice of Life",
+      "School",
+      "Comedy"
+    ],
+    "authors": [
+      "Shinichi Fukuda"
+    ],
+    "artists": [
+      "Shinichi Fukuda"
+    ],
+    "format": "Manga",
+    "status": "On-Going",
+    "chapters": {
+      "start": 99,
+      "end": 113
+    },
+    "info_desc": "<p>Info di sini.</p>",
+    "read_link": "https://global.manga-up.com/manga/113"
+  },
+  {
+    "id": "srn-01",
+    "picture": "assets/gambar/sren.jpg",
+    "title": "Serena",
+    "sub_title": "-",
+    "country": {
+        "name": "Korea",
+        "flag": "kr_flag.jpg"
+    },
+    "stars": "7.6",
+    "statistics": "3,298",
+    "views": "1.8m",
+    "description": "Cantik, muda, kaya raya, kehidupan Serena nyaris sempurna. Hanya dua hal yang membuatnya tidak sempurna, pernikahan yang cacat dan harta warisan milik keluarganya yang dikelola oleh sang suami yang menurutnya bengis dan tidak punya hati. Tapi kali ini, Serena tidak akan tinggal diam. Dia akan merebut kepemilikannya segera!",
+    "genres": [
+      "Kingdom",
+      "Romance",
+      "Fantasy",
+      "Drama"
+    ],
+    "authors": [
+      "Ina"
+    ],
+    "artists": [
+      "Ina"
+    ],
+    "format": "Manhwa",
+    "status": "On-Going",
+    "chapters": {
+      "start": 114,
+      "end": 128
+    },
+    "info_desc": "<p>Info di sini.</p>",
+    "read_link": "https://www.webtoons.com/id/romantic-fantasy/serena/list?title_no=5001"
+  },
+  {
+    "id": "kpr-01",
+    "picture": "assets/gambar/atok.jpg",
+    "title": "Killer Peter",
+    "sub_title": "Bad Killer",
+    "country": {
+        "name": "Korea",
+        "flag": "kr_flag.jpg"
+    },
+    "stars": "6.69",
+    "statistics": "382,701",
+    "views": "61.4m",
+    "description": "Killer legendaris bernama Peter yang kini sudah tua dan sakit-sakitan diincar mati-matian! Setelah tertangkap oleh salah satu kelompok yang mengincarnya, dia menghilang entah ke mana. Ternyata... setelah terluka parah, Peter kembali ke wujudnya saat masih remaja yang lebih kuat dengan raga muda dan sehat. Apa rencana Peter setelah perubahan hidupnya yang tak masuk akal ini?",
+    "genres": [
+      "Action",
+      "Drama"
+    ],
+    "authors": [
+      "Kim Junghyun"
+    ],
+    "artists": [
+      "Lim Lina"
+    ],
+    "format": "Manhwa",
+    "status": "On-Going",
+    "chapters": {
+      "start": 107,
+      "end": 121
+    },
+    "info_desc": "<p>Info di sini.</p>",
+    "read_link": "https://www.webtoons.com/id/action/killer-peter/list?title_no=5846"
+  },
+  {
+    "id": "dmd-01",
+    "picture": "assets/gambar/dormdu.jpg",
+    "title": "Dorm Du",
+    "sub_title": "-",
+    "country": {
+        "name": "Indonesia",
+        "flag": "id_flag.png"
+    },
+    "stars": "6.12",
+    "statistics": "533,896",
+    "views": "20m",
+    "description": "Seorang gadis terjebak di sekolah yang mewah namun mengerikan. Karpet mahal, lampu gantung berkilauan, dan perabotan mewah membuat tempat itu tampak seperti istana dongeng. Tapi itu semua hanyalah kedok. Lapisan kemewahan menyembunyikan kenyataan yang jauh lebih gelap.",
+    "genres": [
+      "School",
+      "Drama",
+      "Fantasy"
+    ],
+    "authors": [
+      "-KAFAZA14-"
+    ],
+    "artists": [
+      "-KAFAZA14-"
+    ],
+    "format": "Komik",
+    "status": "On-Going",
+    "chapters": {
+      "start": 49,
+      "end": 63
+    },
+    "info_desc": "<p>Info di sini.</p>",
+    "read_link": "https://www.webtoons.com/id/fantasy/dorm-du/list?title_no=6171"
+  },
+  {
+    "id": "fdm-01",
+    "picture": "assets/gambar/papa.jpg",
+    "title": "Father, I Don't Want This Marriage!",
+    "sub_title": "-",
+    "country": {
+        "name": "Korea",
+        "flag": "kr_flag.jpg"
+    },
+    "stars": "7.15",
+    "statistics": "165,371",
+    "views": "6.4m",
+    "description": "Semua orang membenci Juvelian. Karakter antagonis di sebuah novel yang bahkan dicampakkan oleh kekasihnya dan dibuang oleh ayahnya sendiri sampai akhirnya ia mati dengan tragis. Namun, takdir memberinya kesempatan kedua. Kali ini, Juvelian tidak ingin mengulang akhir cerita yang sama. Ia memutuskan untuk menikmati kehidupan mewahnya dan hidup tenang. Saat rencananya untuk hidup tenang mulai berhasil, kabar mengejutkan datang. Ayahnya menjodohkannya dengan putra mahkota yang terkenal sebagai psikopat. Berusaha keluar dari perjodohan itu, apa yang akan dilakukan Juvelian?",
+    "genres": [
+      "Kingdom",
+      "Drama",
+      "Fantasy",
+      "Romance"
+    ],
+    "authors": [
+      "Hong Heesu",
+      "MYRRHA",
+      "Yuri"
+    ],
+    "artists": [
+      "Roal"
+    ],
+    "format": "Manhwa",
+    "status": "On-Going",
+    "chapters": {
+      "start": 100,
+      "end": 114
+    },
+    "info_desc": "<p>Info di sini.</p>",
+    "read_link": "https://www.webtoons.com/id/romantic-fantasy/ayah-aku-tidak-mau-menikah/list?title_no=8606"
+  },
+  {
+    "id": "ddn-01",
+    "picture": "assets/gambar/dan.jpg",
+    "title": "Dandadan",
+    "sub_title": "-",
+    "country": {
+        "name": "Korea",
+        "flag": "kr_flag.jpg"
+    },
+    "stars": "8.21",
+    "statistics": "348,963",
+    "views": "14.5m",
+    "description": "Setelah gagal menjadi PNS level 9 untuk keempat kalinya, Han Maru melewati banyak lika-liku hingga menjadi PNS khusus di bawah Kementerian Lingkungan Hidup. Selamat tinggal kehidupan kosan kecil dan makanan instan dari minimarket! Tapi, kebahagiaan itu hanya sementara... karena ternyata pekerjaannya melibatkan tugas rahasia negara yang mempertaruhkan nyawa! Para monster datang ke dunia manusia bersama debu kuning, membunuh dan memakan manusia. Tugas Han Maru sebagai PNS khusus level 9 adalah berperang melawan mereka. Kehidupan Han Maru sebagai PNS tidak biasa dimulai!",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Demon",
+      "Comedy"
+    ],
+    "authors": [
+      "Kwon Sora",
+      "Seo Jaewon"
+    ],
+    "artists": [
+      "Baesaem",
+      "Chamuring"
+    ],
+    "format": "Manhwa",
+    "status": "On-Going",
+    "chapters": {
+      "start": 53,
+      "end": 67
+    },
+    "info_desc": "<p>Info di sini.</p>",
+    "read_link": ""
+  },
+  {
+    "id": "tpv-01",
+    "picture": "assets/gambar/alon.jpg",
+    "title": "The Patron of Villains",
+    "sub_title": "-",
+    "country": {
+        "name": "Korea",
+        "flag": "kr_flag.jpg"
+    },
+    "stars": "8.5",
+    "statistics": "332,447",
+    "views": "9m",
+    "description": "Aku, seorang budak korporat yang bereinkarnasi menjadi seorang bangsawan di dalam game. Tapi katanya aku cuma karakter figuran yang nanti akan mati dibunuh oleh para penjahat masa depan? Tidak bisa begitu! Aku akan menuntun mereka ke jalan yang benar dan menikmati hidup mewah sebagai bangsawan! Untuk mencegah para calon penjahat kecil itu berubah menjadi jahat, aku menjadi dermawan dan membantu mereka mengatasi lingkungan yang keras. Hasilnya? Mereka semua tumbuh menjadi anak-anak yang luar biasa dan… sepenuhnya normal. Namun pada akhirnya… Aku malah menjadi dalang terakhir dari kerajaan. …Hah?",
+    "genres": [
+      "Action",
+      "Fantasy",
+      "Comedy"
+    ],
+    "authors": [
+      "Bom Han Bang-ul",
+      "LICO"
+    ],
+    "artists": [
+      "JOGEN"
+    ],
+    "format": "Manhwa",
+    "status": "On-Going",
+    "chapters": {
+      "start": 19,
+      "end": 32
+    },
+    "info_desc": "<p>Info di sini.</p>",
+    "read_link": "https://www.webtoons.com/en/fantasy/the-patron-of-villains/list?title_no=9321"
+  },
+  {
+    "id": "mtx-01",
+    "picture": "assets/gambar/trap.jpg",
+    "title": "Marriage Toxin",
+    "sub_title": "マリッジトキシン",
+    "country": {
+        "name": "Japan",
+        "flag": "jp_flag.jpg"
+    },
+    "stars": "8.2",
+    "statistics": "89,000",
+    "views": "9.85m",
+    "description": "Seorang pembunuh bayaran dan seorang penipu pernikahan memulai pertempuran perjodohan paling melelahkan di dunia! Gero adalah seorang pemuda dari klan pembunuh bayaran yang telah ada selama ratusan tahun. Sebagai seseorang yang tidak pernah bersekolah dan menjalani hidupnya dengan berurusan dengan sisi gelap bisnis, ia menganggap dirinya \"tidak memiliki prospek dengan wanita\" dan pernikahan sebagai \"sesuatu yang bukan untuknya.\" Namun, suatu hari, karena takut garis keturunan mereka akan hilang, klannya memperingatkan Gero bahwa jika dia tidak menikah dan menghasilkan ahli waris, mereka tidak punya pilihan selain... memaksa adik perempuannya untuk melakukan \"itu.\" Karena putus asa, Gero meminta target pekerjaannya, seorang penipu pernikahan, untuk menikah dengannya?! Dengan penipu itu sebagai penasihatnya, pengejaran pembunuh bayaran untuk pernikahan yang sempurna pun dimulai. Bersiaplah untuk pertempuran perjodohan paling intens dan penuh aksi di dunia!",
+    "genres": [
+      "Action",
+      "Rom-Com",
+      "Mistery",
+      "Supernatural"
+    ],
+    "authors": [
+      "Jou Nyuichi"
+    ],
+    "artists": [
+      "Mizuki Yoda"
+    ],
+    "format": "Manga",
+    "status": "On-Going",
+    "chapters": {
+      "start": 148,
+      "end": 162
+    },
+    "info_desc": "<p>Info di sini.</p>",
+    "read_link": "https://mangaplus.shueisha.co.jp/titles/100190"
+  },
+  {
+    "id": "wmp-01",
+    "picture": "assets/gambar/end.jpg",
+    "title": "Who Made Me a Princess?",
+    "sub_title": "Suddenly, I Became A Princess",
+    "country": {
+        "name": "Korea",
+        "flag": "kr_flag.jpg"
+    },
+    "stars": "6.14",
+    "statistics": "20,773",
+    "views": "15m",
+    "description": "Seorang wanita modern terbangun dan terlahir kembali sebagai Athanasia, putri malang dari novel yang ia hafal di luar kepala, yang ditakdirkan untuk dieksekusi oleh ayahnya sendiri, Kaisar Claude. Bertekad untuk bertahan hidup, ia berencana untuk hidup tanpa diketahui dan melarikan diri sebelum takdirnya terungkap. Tetapi ketika ia bertemu dengan kaisar yang kejam bertahun-tahun lebih awal dari yang diceritakan dalam kisah tersebut, rencana-rencananya yang cermat mulai berantakan. Terperangkap dalam narasi yang sudah mengetahui akhir hidupnya, Athanasia harus menulis ulang takdirnya sebelum sejarah terulang kembali.",
+    "genres": [
+      "Kingdom",
+      "Romance",
+      "Fantasy"
+    ],
+    "authors": [
+      "Plutus"
+    ],
+    "artists": [
+      "Spoon"
+    ],
+    "format": "Manhwa",
+    "status": "On-Going",
+    "chapters": {
+      "start": 135,
+      "end": 141
+    },
+    "info_desc": "<p>Info di sini.</p>",
+    "read_link": ""
+  },
+  {
+    "id": "php-01",
+    "picture": "assets/gambar/hoyoul.jpg",
+    "title": "The Player Hides His Past",
+    "sub_title": "플레이어는 과거를 숨긴다",
+    "country": {
+        "name": "Korea",
+        "flag": "kr_flag.jpg"
+    },
+    "stars": "7.18",
+    "statistics": "348,963",
+    "views": "14.5m",
+    "description": "Saat permainan virtual reality \"Chronicles of Arcana\" terealisasi di dunia nyata, seorang ‘player’ yang telah berasimilasi dengan karakter permainan mereka muncul dan melindungi dunia dari kehancuran. Lee Hoyeol yang tadinya hanya seorang pekerja kantoran biasa tiba-tiba berasimilasi dengan karakter bernama Granfel Claudi Arpheus Romeo yang dia ciptakan saat SMP. Karakter cringe buatannya itu ternyata adalah satu-satunya pemburu iblis yang tersisa! Mampukah Lee Hoyeol menggerakkan Granfel demi menyelamatkan dunia dari para iblis?",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy",
+      "Demon",
+      "Comedy"
+    ],
+    "authors": [
+      "Badass"
+    ],
+    "artists": [
+      "Vinukki",
+      "Gaechaban"
+    ],
+    "format": "Manhwa",
+    "status": "On-Going",
+    "chapters": {
+      "start": 104,
+      "end": 118
+    },
+    "info_desc": "<p>Info di sini.</p>",
+    "read_link": "https://www.webtoons.com/id/fantasy/the-player-hides-his-past/list?title_no=7431"
+  }
+]
