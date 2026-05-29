@@ -2,7 +2,6 @@ function myApp() {
     return {
 
         /* --- STATE --- */
-<<<<<<< HEAD
         mobileMenuOpen : false,
         currentIndex   : 0,
         autoSlide      : null,
@@ -12,14 +11,6 @@ function myApp() {
         /* --- INITIALIZE --- */
         async init() {
             await this.loadData();
-=======
-        mobileMenuOpen: false,
-        currentIndex: 0,
-        autoSlide: null,
-
-        /* --- INITIALIZE --- */
-        init() {
->>>>>>> b84b411 (Reorganisasi lokasi file)
             this.updateSlider();
 
             this.autoSlide = setInterval(() => {
@@ -29,7 +20,6 @@ function myApp() {
             window.addEventListener('resize', () => {
                 this.updateSlider();
             });
-<<<<<<< HEAD
 
             // TODO: Remove this after debugging
             // console.log("comics:", this.comics);
@@ -44,8 +34,6 @@ function myApp() {
                 console.error("Failed to load data:", error);
 
             }
-=======
->>>>>>> b84b411 (Reorganisasi lokasi file)
         },
 
         /* --- SLIDER CONFIGURATION --- */
@@ -83,54 +71,6 @@ function myApp() {
             }, 5000);
         },
 
-<<<<<<< HEAD
         
-=======
-        /* --- AUDIO PLAYER CONFIGURATION --- */
-        togglePlayPause(audioId, btnId) {
-            const audio = document.getElementById(audioId);
-            const btn = document.getElementById(btnId);
-
-            if (!audio || !btn) return;
-
-            // Pause all other audio
-            document.querySelectorAll('audio').forEach(otherAudio => {
-
-                if (otherAudio.id !== audioId) {
-
-                    otherAudio.pause();
-
-                    const otherBtn =
-                        document.querySelector(
-                            '.btn-play-custom.playing'
-                        );
-
-                    if (otherBtn && otherBtn.id !== btnId) {
-                        otherBtn.classList.remove('playing');
-                    }
-                }
-            });
-
-            // Toggle current audio
-            if (audio.paused) {
-
-                audio.play()
-                    .then(() => {
-                        btn.classList.add('playing');
-                    })
-                    .catch(() => {
-                        console.log(
-                            "User interaction required."
-                        );
-                    });
-
-            } else {
-
-                audio.pause();
-
-                btn.classList.remove('playing');
-            }
-        }
->>>>>>> b84b411 (Reorganisasi lokasi file)
     }
 }
