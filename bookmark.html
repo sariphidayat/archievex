@@ -13,88 +13,105 @@
 </head>
 <body class="bg-[#2a244d] text-white min-h-screen flex flex-col">
 
-    <header class="sticky top-0 z-[100] w-full h-16 md:h-20 bg-[#FFF8EE] flex items-center justify-between px-4 md:px-10 shadow-md">
-        <div class="flex items-center gap-3 md:gap-6">
-            <a href="index.html" class="flex-shrink-0">
-                <img src="assets/gambar/icon.png" class="h-10 md:h-14 w-auto object-contain" alt="Logo">
+    <header class="fixed top-0 z-[100] w-full h-16 md:h-20 bg-[#FFF8EE] flex items-center justify-between px-4 md:px-10 shadow-lg">
+        <div class="flex items-center gap-6">
+            <a href="index.html" class="flex items-center">
+                <img src="assets/gambar/icon.png" 
+                class="w-[150px] md:w-[220px] h-auto object-contain block scale-125 origin-left" 
+                alt="Logo">
             </a>
-            <nav class="flex items-center gap-2 md:gap-4 text-[#333333]">
-                <a href="index.html" class="text-[10px] md:text-sm font-semibold hover:text-purple-600">Home</a>
-                <div class="w-[1px] h-3 bg-gray-300"></div>
-                <a href="bookmark.html" class="text-[10px] md:text-sm font-bold text-purple-700 underline decoration-2 underline-offset-4">Bookmark</a>
-                <div class="w-[1px] h-3 bg-gray-300"></div>
-                <a href="other.html" class="text-[10px] md:text-sm font-semibold hover:text-purple-600">Other</a>
+        
+            <nav id="mobile-menu" class="hidden absolute top-16 left-0 w-full bg-[#FFF8EE] flex-col p-4 gap-4 shadow-lg md:static md:flex md:flex-row md:w-auto md:p-0 md:shadow-none md:top-auto text-[#333333] font-semibold text-sm">
+                <a href="index.html" class="hover:text-purple-600 transition">Home</a>
+                <div class="hidden md:block w-px h-4 bg-gray-300"></div>
+                <a href="bookmark.html" class="hover:text-purple-600 transition">Bookmark</a>
+                <div class="hidden md:block w-px h-4 bg-gray-300"></div>
+                <a href="#" class="hover:text-purple-600 transition">Other</a>
             </nav>
         </div>
 
-        <div class="flex items-center gap-2 md:gap-4">
-            <div class="flex items-center bg-white px-2 md:px-3 py-1 rounded-full border border-gray-200 shadow-sm">
-                <input type="text" id="search-input" placeholder="Cari bookmark..." class="bg-transparent outline-none text-[10px] md:text-xs w-14 sm:w-24 md:w-32 text-gray-700">
-                <img src="assets/gambar/search.png" class="w-3 md:w-4 h-3 md:h-4 opacity-50" alt="Search">
+        <div class="flex items-center gap-4">
+            <div class="flex items-center bg-white px-3 py-1 rounded-full border border-gray-200">
+                <input type="text" id="search-input" placeholder="Cari bookmark..." class="bg-transparent outline-none text-xs w-24 md:w-32 text-gray-700">
+                <img src="assets/gambar/search.png" class="w-4 h-4 opacity-40" alt="Search">
             </div>
-            <a href="account.html" class="flex-shrink-0">
-                <img src="assets/gambar/Setting.png" class="w-5 md:w-6 h-5 md:h-6 opacity-80" alt="Settings">
-            </a>
+            <a href="account.html"><img src="assets/gambar/Setting.png" class="w-6 h-6 opacity-80" alt="Settings"></a>
+        
+            <button onclick="toggleMenu()" class="md:hidden flex flex-col gap-1">
+                <div class="w-6 h-0.5 bg-gray-800"></div>
+                <div class="w-6 h-0.5 bg-gray-800"></div>
+                <div class="w-6 h-0.5 bg-gray-800"></div>
+            </button>
         </div>
     </header>
 
-    <main class="flex-grow flex justify-center p-4 md:p-10">
-        <div class="bg-[#5A527A] w-full max-w-[1100px] min-h-[500px] rounded-[30px] md:rounded-[40px] p-6 md:p-10 flex flex-col items-center shadow-2xl border border-white/10">
+    <main class="flex-grow flex justify-center p-4 md:p-10 pt-24 md:pt-32"> <div class="bg-[#5A527A] w-full max-w-[1100px] min-h-[500px] rounded-[30px] md:rounded-[40px] p-6 md:p-10 flex flex-col items-center shadow-2xl border border-white/10">
             
             <h2 class="font-prompt text-[#FFD700] text-lg md:text-2xl font-bold tracking-widest uppercase border-b-2 border-[#FFD700] pb-2 mb-10 text-center">
                 BOOKMARK KAMU
             </h2>
 
-            <div class="w-full flex-grow flex items-center justify-center">
-                <div id="empty-state" class="hidden flex-col items-center text-center">
+            <div class="w-full flex-grow">
+                <div id="empty-state" class="hidden flex flex-col items-center justify-center text-center py-20">
                     <h1 class="text-xl md:text-3xl font-bold mb-2">Kamu Belum Membuat Bookmark...</h1>
-                    <p class="text-white/50 text-xs md:text-base">Cari komik favoritmu sekarang!</p>
+                    <p class="text-white/50 text-xs md:text-base mb-6">Cari komik favoritmu sekarang!</p>
+                    <a href="index.html" class="bg-[#FFD700] text-[#2a244d] px-6 py-2 rounded-full font-bold text-sm hover:scale-105 transition">Cari Komik</a>
                 </div>
 
-                <div id="bookmark-list" class="hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-6 w-full"></div>
+                <div id="bookmark-list" class="hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 w-full"></div>
             </div>
         </div>
     </main>
+
+    <footer class="p-10 text-center text-white/30 text-xs">
+        © 2026 ArchieveX. All Rights Reserved.
+    </footer>
 
     <script>
         const searchInput = document.getElementById('search-input');
         const listContainer = document.getElementById('bookmark-list');
         const emptyState = document.getElementById('empty-state');
 
+        const toggleMenu = () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        };
+
         function renderBookmarks(data = null) {
-            const bookmarks = data || JSON.parse(localStorage.getItem('myBookmarks')) || [];
+            const bookmarks = data !== null ? data : (JSON.parse(localStorage.getItem('myBookmarks')) || []);
 
             if (bookmarks.length === 0) {
                 listContainer.classList.add('hidden');
-                emptyState.classList.replace('hidden', 'flex');
+                emptyState.classList.remove('hidden');
                 return;
             }
 
-            emptyState.classList.replace('flex', 'hidden');
-            listContainer.classList.replace('hidden', 'grid');
+            emptyState.classList.add('hidden');
+            listContainer.classList.remove('hidden');
+            listContainer.classList.add('grid');
             listContainer.innerHTML = '';
 
-            bookmarks.forEach((comic) => {
-                const allData = JSON.parse(localStorage.getItem('myBookmarks')) || [];
-                const originalIndex = allData.findIndex(b => b.title === comic.title);
-
+            bookmarks.forEach((comic, index) => {
+                // Buat card bookmark
                 listContainer.innerHTML += `
-                    <div class="relative bg-[#3B3267] rounded-xl overflow-hidden border border-white/5 transition-all hover:border-[#FFD700]/50 shadow-md">
+                    <div class="relative bg-[#3B3267] rounded-xl overflow-hidden border border-white/5 transition-all hover:border-[#FFD700]/50 hover:-translate-y-1 shadow-md group">
                         <a href="${comic.link}">
-                            <img src="${comic.image}" class="w-full aspect-[3/4] object-cover block">
+                            <img src="${comic.image}" class="w-full aspect-[3/4] object-cover block group-hover:brightness-110 transition">
                             <div class="p-2 md:p-3 text-center">
                                 <h3 class="text-[#FFD700] text-[10px] md:text-sm font-bold truncate">${comic.title}</h3>
                                 <p class="text-[#FFD700]/70 text-[9px] md:text-xs italic truncate">${comic.subtitle}</p>
                             </div>
                         </a>
-                        <button onclick="removeBookmark(event, ${originalIndex})" 
-                            class="absolute top-1 right-1 bg-red-500 text-white text-[8px] md:text-[10px] font-bold px-2 py-0.5 rounded shadow-md z-10">
+                        <button onclick="removeBookmark(event, ${index})" 
+                            class="absolute top-2 right-2 bg-red-500 hover:bg-red-600 text-white text-[8px] md:text-[10px] font-bold px-2 py-1 rounded shadow-lg z-10 transition">
                             HAPUS
                         </button>
                     </div>`;
             });
         }   
 
+        // Fitur Search
         searchInput.addEventListener('input', (e) => {
             const keyword = e.target.value.toLowerCase();
             const allBookmarks = JSON.parse(localStorage.getItem('myBookmarks')) || [];
@@ -105,16 +122,28 @@
             renderBookmarks(filtered);
         });
 
-    function removeBookmark(event, index) {
-        event.preventDefault();
-        let bookmarks = JSON.parse(localStorage.getItem('myBookmarks')) || [];
-        bookmarks.splice(index, 1);
-        localStorage.setItem('myBookmarks', JSON.stringify(bookmarks));
-        searchInput.value = '';
-        renderBookmarks();
-    }
+        // Fitur Hapus
+        function removeBookmark(event, index) {
+            event.preventDefault();
+            event.stopPropagation(); // Mencegah klik tembus ke link komik
+            
+            let bookmarks = JSON.parse(localStorage.getItem('myBookmarks')) || [];
+            bookmarks.splice(index, 1);
+            localStorage.setItem('myBookmarks', JSON.stringify(bookmarks));
+            
+            // Re-render
+            const currentSearch = searchInput.value;
+            if (currentSearch) {
+                const filtered = bookmarks.filter(c => 
+                    c.title.toLowerCase().includes(currentSearch.toLowerCase())
+                );
+                renderBookmarks(filtered);
+            } else {
+                renderBookmarks();
+            }
+        }
 
-    document.addEventListener('DOMContentLoaded', () => renderBookmarks());
+        document.addEventListener('DOMContentLoaded', () => renderBookmarks());
     </script>
 </body>
 </html>

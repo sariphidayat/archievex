@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArchieveX - </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Prompt:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .font-prompt {
+            font-family: 'Prompt', sans-serif;
+        }
+
+        .glass-card {
+            background: rgba(69, 61, 98, 0.95);
+        }
+    </style>
+
+    <script defer src="assets/js/alpine.min.js"></script>
+</head>
+
+<body class="bg-[#2a244d] text-white min-h-screen" x-data="myApp()" x-init="init()">
+
+    <header
+        class="fixed top-0 z-[100] w-full h-16 md:h-20 bg-[#FFF8EE] flex items-center justify-between px-4 md:px-10 shadow-lg">
+        <div class="flex items-center gap-6">
+            <a href="index.html" class="flex items-center">
+                <img src="assets/gambar/icon.png"
+                    class="w-[150px] md:w-[220px] h-auto object-contain block scale-125 origin-left" alt="Logo" />
+            </a>
+
+            <nav id="mobile-menu" :class="{'hidden': !mobileMenuOpen, 'flex': mobileMenuOpen}"
+                class="absolute top-16 left-0 w-full bg-[#FFF8EE] flex-col p-4 gap-4 shadow-lg md:static md:flex md:flex-row md:w-auto md:p-0 md:shadow-none md:top-auto text-[#333333] font-semibold text-sm">
+                <a href="index.html" class="hover:text-purple-600 transition">Home</a>
+                <div class="hidden md:block w-px h-4 bg-gray-300"></div>
+                <a href="bookmark.html" class="hover:text-purple-600 transition">Bookmark</a>
+                <div class="hidden md:block w-px h-4 bg-gray-300"></div>
+                <a href="#" class="hover:text-purple-600 transition">Other</a>
+            </nav>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <div class="flex items-center bg-white px-3 py-1 rounded-full border border-gray-200">
+                <input type="text" id="search-input" placeholder="Cari bookmark..."
+                    class="bg-transparent outline-none text-xs w-24 md:w-32 text-gray-700">
+                <img src="assets/gambar/search.png" class="w-4 h-4 opacity-40" alt="Search">
+            </div>
+            <a href="account.html"><img src="assets/gambar/Setting.png" class="w-6 h-6 opacity-80" alt="Settings"></a>
+
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden flex flex-col gap-1">
+                <div class="w-6 h-0.5 bg-gray-800"></div>
+                <div class="w-6 h-0.5 bg-gray-800"></div>
+                <div class="w-6 h-0.5 bg-gray-800"></div>
+            </button>
+        </div>
+    </header>
+
+    <main class="pt-16 md:pt-20">
+        <section class="relative w-full min-h-[400px] flex items-center justify-center py-10 px-6 overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img :src="detail.picture" class="w-full h-full object-cover blur-xl brightness-[0.3] scale-110">
+            </div>
+
+            <div class="relative z-10 w-full max-w-5xl">
+                <a href="index.html"
+                    class="inline-flex items-center justify-center w-10 h-10 bg-white/20 rounded-full mb-6 hover:bg-white/30">
+                    <img :src="detail.picture" class="w-4">
+                </a>
+
+                <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
+                    <img :src="detail.picture"
+                        class="w-44 md:w-56 rounded-2xl shadow-2xl border-2 border-white/10 md:-mt-28 relative z-30 transition-all">
+                    <div class="flex-1">
+                        <h1 class="font-prompt text-3xl md:text-5xl mb-2 text-[#ffffff]"
+                            x-text="detail.title"></h1>
+                        <p class="text-white/60 text-sm md:text-base mb-6"
+                            x-text="detail.sub_title"></p>
+
+                        <div class="flex flex-wrap justify-center md:justify-start gap-3 mb-6">
+                            <a :href="detail.read_link" target="_blank"
+                                class="bg-[#5a527c] px-6 py-3 rounded-xl font-bold hover:bg-purple-700 transition">Start
+                                Reading</a>
+                            <button id="bookmarkBtn"
+                                @click="toggleBookmark()"
+                                class="px-6 py-3 rounded-xl font-bold flex items-center gap-2 hover:scale-105 transition active:scale-95"
+                                :class="isBookmarked ? 'bg-yellow-400 text-black' : 'bg-[#7c749c]'">
+                                <img src="assets/gambar/bookmark.png" class="w-4">
+                                <span id="bookmarkText" x-text="isBookmarked ? 'Bookmarked' : 'Bookmark'"></span>
+                            </button>
+                        </div>
+
+                        <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                            <span class="bg-black/40 px-3 py-1 rounded-lg text-xs font-semibold">⭐ <span
+                                    x-text="detail.stars"></span></span>
+                            <span class="bg-black/40 px-3 py-1 rounded-lg text-xs font-semibold">📊 <span
+                                    x-text="detail.statistics"></span></span>
+                            <span class="bg-black/40 px-3 py-1 rounded-lg text-xs font-semibold">👁️ <span
+                                    x-text="detail.views"></span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-5xl mx-auto px-6 -mt-10 relative z-20 pb-20">
+            <div class="glass-card p-6 md:p-10 rounded-[40px] shadow-2xl border border-white/5">
+                <p class="text-sm md:text-base leading-relaxed text-white/80 text-justify mb-8">
+                    <strong>Sinopsis:</strong> <span x-text="detail.description"></span>
+                </p>
+
+                <div class="flex flex-wrap gap-y-6 gap-x-10 border-b border-white/10 pb-8 mb-8">
+                    <div class="space-y-2">
+                        <span class="text-[10px] uppercase tracking-widest text-white/40 font-bold">Genre</span>
+                        <div class="flex flex-wrap gap-2">
+                            <template x-for="genre in detail.genres" :key="genre">
+                                <span class="bg-[#342e4d] px-3 py-1 rounded-md text-[11px]" x-text="genre"></span>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-[10px] uppercase tracking-widest text-white/40 font-bold">Author</span>
+                        <div class="flex flex-wrap gap-2">
+                            <template x-for="author in detail.authors" :key="author">
+                                <span class="bg-[#342e4d] px-3 py-1 rounded-md text-[11px]" x-text="author"></span>
+                            </template>
+                            <!-- <span class="bg-[#342e4d] px-3 py-1 rounded-md text-[11px]">Sing N Song</span> -->
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-[10px] uppercase tracking-widest text-white/40 font-bold">Artist</span>
+                        <div class="flex flex-wrap gap-2">
+                            <template x-for="artist in detail.artists" :key="artist">
+                                <span class="bg-[#342e4d] px-3 py-1 rounded-md text-[11px]" x-text="artist"></span>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-[10px] uppercase tracking-widest text-white/40 font-bold">Format</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-[#342e4d] px-3 py-1 rounded-md text-[11px]" x-text="detail.format"></span>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-[10px] uppercase tracking-widest text-white/40 font-bold">Status</span>
+                        <div class="flex"><span
+                                class="bg-green-600/20 text-green-400 border border-green-500/30 px-3 py-1 rounded-md text-[11px]"
+                                x-text="detail.status"></span></div>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 mb-6">
+                    <button id="tab-chapters" @click="currentTab = 'chapters'"
+                        class="px-6 py-2 rounded-xl bg-[#342e4d] font-bold transition opacity-60"
+                        :class="{'opacity-100 bg-[#5a527c]': currentTab === 'chapters'}">Chapters</button>
+                    <button id="tab-info" @click="currentTab = 'info'"
+                        class="px-6 py-2 rounded-xl bg-[#342e4d] font-bold transition opacity-60"
+                        :class="{'opacity-100 bg-[#5a527c]': currentTab === 'info'}">Info</button>
+                </div>
+
+                <div id="content-chapters" x-show="currentTab === 'chapters'"
+                    class="bg-[#342e4d] p-6 rounded-2xl border border-white/5">
+                    <div class="space-y-6">
+                        <div
+                            class="bg-[#342e4d] p-1 px-4 rounded-2xl flex items-center border border-white/10 focus-within:border-purple-400 transition">
+                            <input type="text" id="chapterSearch" x-model="searchQuery" placeholder="Cari chapter..."
+                                class="bg-transparent w-full py-3 outline-none text-sm">
+                        </div>
+
+                        <div id="chapter-list" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                            <template x-for="chapter in chapters" :key="chapter.number">
+                                <div class="chapter-item bg-[#5a527c] p-4 rounded-xl text-center text-sm font-semibold hover:bg-purple-600 transition cursor-pointer shadow-md"
+                                    :data-page="chapter.page"
+                                    x-show="searchQuery?chapter.number.toString().startsWith(searchQuery):(currentPage === chapter.page)">
+                                    <span x-text="'Chapter ' + chapter.number"></span>
+                                </div>
+                            </template>
+                        </div>
+
+                        <div class="pagination flex justify-center gap-2 pt-6">
+                            <template x-for="page in totalPages" :key="page">
+                                <button class="page-num bg-[#342e4d] w-10 h-10 rounded-lg"
+                                    :class="{'bg-purple-600 border': currentPage === page}" @click="currentPage = page"
+                                    x-text="page" x-show="!searchQuery"></button>
+                            </template>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content-others" x-show="currentTab === 'info'"
+                    class="bg-[#342e4d] p-6 rounded-2xl border border-white/5 space-y-4">
+                    <span x-html="detail.length > 0 ? detail[0].info_desc : 'Info Komik tidak tersedia.'"></span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="p-10 text-center text-white/30 text-xs">
+        © 2026 ArchieveX. All Rights Reserved.
+    </footer>
+
+    <script type="text/javascript" src="assets/js/detail_page.js"></script>
+    </script>
+
+</body>
+
+</html>
