@@ -448,5 +448,239 @@
     },
     "info_desc": "<p>Info di sini.</p>",
     "read_link": "https://www.webtoons.com/id/fantasy/the-player-hides-his-past/list?title_no=7431"
+  },
+  {
+    "id": "wee-01",
+    "picture": "assets/gambar/wee.jpg",
+    "title": "WEE!!!",
+    "sub_title": "-",
+    "country": {
+        "name": "Indonesia",
+        "flag": "id_flag.jpg"
+    },
+    "stars": "6.41",
+    "statistics": "61,593",
+    "views": "4,157m",
+    "description": "Di saat kangen sekolah dan bertemu teman-teman lagi, ada Amu yang kesehariannya di sekolah bisa kamu ikuti! Bersama teman-temannya yang berkelakuan aneh serta bodoh, mereka akan melalui masa SMA yang penuh suka, duka, cita, dan cinta!",
+    "genres": [
+      "Slice of Life",
+      "School",
+      "Comedy"
+    ],
+    "authors": [
+      "Amoeba UwU"
+    ],
+    "artists": [
+      "Amoeba UwU"
+    ],
+    "format": "Komik",
+    "status": "On-Going",
+    "chapters": {
+      "start": 412,
+      "end": 426
+    },
+    "info_desc": "<p>Info di sini.</p>",
+    "read_link": "https://www.webtoons.com/id/slice-of-life/wee/list?title_no=3085"
+  },
+  {
+    "id": "ele-01",
+    "picture": "assets/gambar/oyen.jpg",
+    "title": "Eleceed",
+    "sub_title": "-",
+    "country": {
+        "name": "Korea",
+        "flag": "kr_flag.jpg"
+    },
+    "stars": "6.68",
+    "statistics": "45,223",
+    "views": "4,777m",
+    "description": "Jiwoo adalah seorang pemuda baik hati yang memanfaatkan refleks secepat kilat seekor kucing untuk diam-diam membuat dunia menjadi tempat yang lebih baik – satu anak kecil atau hewan peliharaan asuh yang diselamatkan pada satu waktu. Kayden adalah seorang agen rahasia yang sedang buron, yang mendapati dirinya terjebak dalam tubuh seekor… um… kucing tua berbulu lebat yang sangat gemuk. Bersama-sama, dipersenjatai dengan kekuatan super Jiwoo dan kecerdasan super Kayden, mereka bertekad untuk melawan kekuatan-kekuatan yang ingin membiarkan kejahatan menguasai dunia ini. Itu pun jika mereka bisa saling toleransi cukup lama untuk menyelesaikan tugas tersebut.",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "authors": [
+      "ZHENA"
+    ],
+    "artists": [
+      "Jeho Son"
+    ],
+    "format": "Manhwa",
+    "status": "On-Going",
+    "chapters": {
+      "start": 386,
+      "end": 399
+    },
+    "info_desc": "<p>Info di sini.</p>",
+    "read_link": "https://www.webtoons.com/id/fantasy/eleceed/list?title_no=2034"
+  },
+  {
+    "id": "ded-01",
+    "picture": "assets/gambar/dedes.jpg",
+    "title": "Dedes",
+    "sub_title": "-",
+    "country": {
+        "name": "Indonesia",
+        "flag": "id_flag.jpg"
+    },
+    "stars": "5.64",
+    "statistics": "187,543",
+    "views": "62.1m",
+    "description": "Isekai yang diangkat dari kisah sejarah Indonesia! Seorang mahasiswi tiba-tiba terbangun di tubuh Dedes, seorang gadis yang kelak akan menjadi ibu bagi para raja di tanah Jawa. Tetapi, semakin lama berada dalam tubuh Dedes, dia menyadari bahwa sejarah yang ada tak sepenuhnya benar.",
+    "genres": [
+      "Kingdom",
+      "Romance",
+      "Fantasy"
+    ],
+    "authors": [
+      "egestigi"
+    ],
+    "artists": [
+      "egestigi"
+    ],
+    "format": "Komik",
+    "status": "On-Going",
+    "chapters": {
+      "start": 386,
+      "end": 399
+    },
+    "info_desc": "<p>Info di sini.</p>",
+    "read_link": "https://www.webtoons.com/id/romantic-fantasy/dedes/list?title_no=3938"
+  },
+  {
+    "id": "bbt-01",
+    "picture": "assets/gambar/ciel.jpg",
+    "title": "Black Butler",
+    "sub_title": "黒執事",
+    "country": {
+        "name": "Japan",
+        "flag": "jp_flag.jpg"
+    },
+    "stars": "8.09",
+    "statistics": "27,658",
+    "views": "4.35m",
+    "description": "Di Inggris abad ke-19, di dalam rumah bangsawan Phantomhive yang megah, tinggal seorang kepala pelayan yang mahir dalam segala hal yang berkaitan dengan ilmu pengetahuan, budaya, kuliner, dan pertempuran. Earl Ciel Phantomhive yang berusia dua belas tahun dan kepala pelayannya, Sebastian Michaelis, terikat oleh perjanjian gelap dengan taruhan yang tak terbayangkan. Bersiaplah untuk terpikat oleh kisah mereka dalam komik nomor 1 di dunia tentang seorang kepala pelayan yang jahat!",
+    "genres": [
+      "Action",
+      "Adventure",
+      "GFantasy"
+    ],
+    "authors": [
+      "Yana Toboso"
+    ],
+    "artists": [
+      "Yana Toboso"
+    ],
+    "format": "Manga",
+    "status": "On-Going",
+    "chapters": {
+      "start": 202,
+      "end": 216
+    },
+    "info_desc": "<p>Info di sini.</p>",
+    "read_link": "https://global.manga-up.com/manga/526"
+  },
+  {
+    "id": "otw-01",
+    "picture": "assets/gambar/mama.jpg",
+    "title": "On The Way To Meet Mom",
+    "sub_title": "On the Way to See Mom | 엄마를 만나러 가는 길",
+    "country": {
+        "name": "Korea",
+        "flag": "kr_flag.jpg"
+    },
+    "stars": "7.4",
+    "statistics": "73,874",
+    "views": "8.5m",
+    "description": "Setelah ditemukan di sebuah rumah kosong, Mori membuka matanya di tempat penampungan anak-anak yang kehilangan orang tuanya. Seraya menyesuaikan diri dengan kehidupan yang asing baginya, dia tiba-tiba menerima bantuan dan cinta dari seorang sponsor anonim... ‘Mungkinkah orang ini... ibu saya?’ Ikuti kisah perjalanan Mori untuk mencari ibunya!",
+    "genres": [
+      "Drama",
+      "Adventure",
+      "Fantasy"
+    ],
+    "authors": [
+      "GOMYANG"
+    ],
+    "artists": [
+      "GOMYANG"
+    ],
+    "format": "Manhwa",
+    "status": "On-Going",
+    "chapters": {
+      "start": 27,
+      "end": 32
+    },
+    "info_desc": "<p>Info di sini.</p>",
+    "read_link": "https://g.shinigami.asia/series/2b826da7-3787-4370-95ad-7da2dd7d44b2"
+  },
+  {
+    "id": "mtp-01",
+    "picture": "assets/gambar/moriarty.jpg",
+    "title": "Morriarty The Patriot",
+    "sub_title": "憂国のモリアーティ",
+    "country": {
+        "name": "Japan",
+        "flag": "jp_flag.jpg"
+    },
+    "stars": "9.11",
+    "statistics": "85,462",
+    "views": "9.75m",
+    "description": "Pada akhir abad ke-19, Britania Raya menguasai seperempat dunia. Para bangsawan duduk di rumah-rumah mewah mereka dalam kenyamanan dan kemewahan, sementara kelas pekerja bekerja keras di pekerjaan mereka. Ketika keluarga kelas atas Albert James Moriarty muda mengadopsi dua anak yatim piatu dari kelas bawah, kekejaman yang dialami kedua anak laki-laki itu di tangan keluarganya memperkuat kebencian Albert terhadap kaum bangsawan tempat ia dilahirkan. Ia meminta anak laki-laki yang lebih tua—yang memiliki pikiran jenius dan naluri pembunuh—untuk membantunya membersihkan dunia dari kejahatan, dimulai dari keluarganya sendiri!",
+    "genres": [
+      "Crime",
+      "Mystery",
+      "Historical",
+      "Shounen"
+    ],
+    "authors": [
+      "Ryosuke Takeuchi"
+    ],
+    "artists": [
+      "Hikaru Miyoshi"
+    ],
+    "format": "Manga",
+    "status": "On-Going",
+    "chapters": {
+      "start": 62,
+      "end": 76
+    },
+    "info_desc": "<p>Info di sini.</p>",
+    "read_link": "https://www.viz.com/manga-books/manga/moriarty-the-patriot-volume-1-0/product/6426"
+  },
+  {
+    "id": "onp-01",
+    "picture": "assets/gambar/piece.jpg",
+    "title": "One Piece",
+    "sub_title": "ワンピース",
+    "country": {
+        "name": "Japan",
+        "flag": "jp_flag.jpg"
+    },
+    "stars": "9.81",
+    "statistics": "96,633",
+    "views": "9.5m",
+    "description": "Saat masih kecil, Monkey D. Luffy terinspirasi untuk menjadi bajak laut setelah mendengarkan kisah-kisah bajak laut \"Si Rambut Merah\" Shanks. Namun, hidup Luffy berubah ketika ia secara tidak sengaja memakan Buah Iblis Gum-Gum dan mendapatkan kekuatan untuk meregang seperti karet... dengan konsekuensi tidak akan pernah bisa berenang lagi! Bertahun-tahun kemudian, masih bertekad untuk menjadi raja bajak laut, Luffy memulai petualangannya... seorang diri di atas perahu dayung, mencari \"One Piece\" yang legendaris, yang konon merupakan harta karun terbesar di dunia...",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy",
+      "Shounen",
+      "Comedy"
+    ],
+    "authors": [
+      "Eiichiro Oda"
+    ],
+    "artists": [
+      "Eiichiro Oda"
+    ],
+    "format": "Manga",
+    "status": "On-Going",
+    "chapters": {
+      "start": 1161,
+      "end": 1175
+    },
+    "info_desc": "<p>Info di sini.</p>",
+    "read_link": "https://mangaplus.shueisha.co.jp/titles/100020"
   }
 ]

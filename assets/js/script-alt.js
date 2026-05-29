@@ -2,12 +2,14 @@ function myApp() {
     return {
 
         /* --- STATE --- */
-        mobileMenuOpen: false,
-        currentIndex: 0,
-        autoSlide: null,
+        mobileMenuOpen : false,
+        currentIndex   : 0,
+        autoSlide      : null,
+        comics         : [],
 
         /* --- INITIALIZE --- */
-        init() {
+        async init() {
+            await this.loadData();
             this.updateSlider();
 
             this.autoSlide = setInterval(() => {
@@ -17,6 +19,20 @@ function myApp() {
             window.addEventListener('resize', () => {
                 this.updateSlider();
             });
+
+            // TODO: Remove this after debugging
+            // console.log("comics:", this.comics);
+        },
+
+        async loadData() {
+            try {
+                const response = await fetch('assets/data.json');
+                this.comics = await response.json();
+
+            } catch (error) {
+                console.error("Failed to load data:", error);
+
+            }
         },
 
         /* --- SLIDER CONFIGURATION --- */
@@ -93,9 +109,7 @@ function myApp() {
                     });
 
             } else {
-
                 audio.pause();
-
                 btn.classList.remove('playing');
             }
         }
