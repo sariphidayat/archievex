@@ -14,9 +14,8 @@
 </head>
 
 <body x-data="myApp()" x-init="init()">
-
     <header
-        class="fixed top-0 z-[100] w-full h-16 md:h-20 bg-[#FFF8EE] flex items-center justify-between px-4 md:px-10 shadow-lg">
+        class="fixed top-0 z-[100] h-16 md:h-20 bg-[#FFF8EE] w-full flex items-center justify-between px-4 md:px-10 shadow-lg">
         <div class="flex items-center gap-6">
             <a href="index.html" class="flex items-center">
                 <img src="assets/gambar/icon.png"
@@ -39,8 +38,6 @@
                     class="bg-transparent outline-none text-xs w-24 md:w-32 text-gray-700">
                 <img src="assets/gambar/search.png" class="w-4 h-4 opacity-40" alt="Search">
             </div>
-            <a href="account.html"><img src="assets/gambar/Setting.png" class="w-6 h-6 opacity-80" alt="Settings"></a>
-
             <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden flex flex-col gap-1">
                 <div class="w-6 h-0.5 bg-gray-800"></div>
                 <div class="w-6 h-0.5 bg-gray-800"></div>
@@ -97,8 +94,8 @@
     <footer class="footer text-center text-black/30 text-xs p-10">
         <p>© 2026 ArchieveX. All Rights Reserved.</p>
     </footer>
-
     <script type="text/javascript" src="assets/js/script-alt.js"></script>
+
 </body>
 
 </html>

@@ -102,339 +102,230 @@
    /* 3. HERO SECTION & SLIDER */
 /* --------------------------------------------------- */
 
-.hero-wrapper {
-    width: 100%;
-    height: 350px !important; 
-    position: relative;
-    overflow: hidden;
-    margin-top: 64px; 
-}
-
-#banner-slider {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.slider-track {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-    min-width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.hero-text {
-    position: absolute;
-    bottom: 30px;
-    left: 40px;
-    z-index: 5;
-    color: white;
-}
-
-.hero-text h1 {
-    font-size: 1.8rem; 
-    line-height: 1.2;
-}
-
-.hero-text p {
-    font-size: 14px;
-    max-width: 350px;
-    margin-bottom: 15px;
-}
-
-.btn-start {
-    background: #605581;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 18px;
-}
-
-/* Slider Navigation Buttons */
-.btn-slider {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.4);
-    color: white;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    z-index: 100;
-    font-size: 20px;
-    transition: 0.3s;
-}
-
-.btn-slider:hover {
-    background: rgba(255,255,255,0.8);
-    color: black;
-}
-
-.prev { left: 0; border-radius: 0 5px 5px 0; }
-.next { right: 0; border-radius: 5px 0 0 5px; }
-
-/* --------------------------------------------------- */
-   /* 4. MUSIC SECTION */
- /* --------------------------------------------------- */
-.music-section {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 30px 20px;
-    background: var(--color-bg-cream);
-}
-
-.music-card {
-    background: #fff;
-    padding: 15px 20px;
-    border-radius: 12px;
-    border: 1px solid #ddd;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    width: 320px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-.music-info p {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--color-text-dark);
-}
-
-.music-info span {
-    font-size: 12px;
-    color: #888;
-}
-
-.btn-play-custom {
-    width: 36px;
-    height: 36px;
-    border: none;
-    border-radius: 50%;
-    background: #3498db;
-    color: white;
-    font-size: 14px;
-    cursor: pointer;
-    margin-left: auto;
-    position: relative;
-    transition: background-color 0.3s;
-}
-
-.btn-play-custom:hover {
-    background: #2980b9;
-}
-
-.btn-play-custom::after {
-    content: '\25B6'; /* Play Icon */
-    position: absolute;
-    top: 50%;
-    left: 55%;
-    transform: translate(-50%, -50%);
-}
-
-.btn-play-custom.playing::after {
-    content: '||'; /* Pause Icon */
-    left: 50%;
-    font-size: 12px;
-}
-
-/* --------------------------------------------------- */
-   /* 5. COMIC GRID & CARDS */
-/* --------------------------------------------------- */
-.comic-container {
-    flex: 1;
-    padding: 50px 20px;
-}
-
-.comic-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    align-items: start;
-}
-
-.card {
-    background: var(--color-bg-cream);
-    padding: 15px;
-    border-radius: 15px;
-    transition: 0.3s;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.card-image {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 3 / 4;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.cover {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.flag {
-    position: absolute;
-    bottom: 8px;
-    right: 8px;
-    width: 22px;
-    border: 1px solid white;
-    border-radius: 2px;
-}
-
-.card-info {
-    text-align: center;
-    margin-top: 12px;
-}
-
-.card-info h2 {
-    font-size: 14px;
-    color: var(--color-text-dark);
-    margin-bottom: 10px;
-    height: 40px;
-    overflow: hidden;
-    display: -webkit-box;
-    /* -webkit-line-clamp: 2; */
-    -webkit-box-orient: vertical;
-}
-
-.btn-chapter {
-    background: var(--color-btn-purple);
-    color: white;
-    border: none;
-    padding: 8px;
-    width: 100%;
-    border-radius: 20px;
-    font-size: 12px;
-    cursor: pointer;
-}
-
-/* --------------------------------------------------- */
-   /* 6. FOOTER */
-/* --------------------------------------------------- */
-.footer {
-    background: var(--color-bg-cream);
-    text-align: center;
-    padding: 20px;
-    margin-top: auto;
-    border-top: 1px solid #ddd;
-}
-
-/* --------------------------------------------------- */
-   /* 7. RESPONSIVE QUERIES */
-/* --------------------------------------------------- */
-@media (max-width: 900px) {
-    .comic-grid { grid-template-columns: repeat(2, 1fr); }
-    #banner-slider { aspect-ratio: 4/3; }
-    .hero-text h1 { font-size: 36px; }
-}
-
-@media (max-width: 500px) {
-    .comic-grid { grid-template-columns: 1fr; }
-    .hero-text { left: 20px; }
-    .hero-text h1 { font-size: 28px; }
-}
-
-/* --------------------------------------------------- */
-.comic-container {
-    width: 100%;
-    padding: 20px 15px; 
-}
-
-.comic-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 25px;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    align-items: start;
-}
-
-@media (max-width: 1024px) {
-    .comic-grid {
-        grid-template-columns: repeat(3, 1fr); 
-        gap: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .comic-grid {
-        grid-template-columns: repeat(2, 1fr); 
-        width: 95%;
-    }
-    
-    .navbar { padding: 10px 20px; }
-    .nav-links { display: none; } 
-    .music-section { flex-direction: column; align-items: center; }
-    .music-card { width: 100%; }
-}
-
-
-@media (max-width: 480px) {
-    .comic-grid {
-        grid-template-columns: repeat(1, 1fr); 
-    }
-    .hero-text h1 { font-size: 24px; }
-}
-
-
-@media (max-width: 600px) {
-    .navbar {
-        padding: 10px 20px; 
-        height: 70px;
+    .hero-wrapper {
+        width: 100%;
+        height: 350px !important; 
+        position: relative;
+        overflow: hidden;
+        margin-top: 64px; 
     }
 
-    .nav-links {
-        display: none; 
+    #banner-slider {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .slider-track {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+        min-width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
     }
 
     .hero-text {
-        left: 20px;
-        bottom: 20px;
-        top: auto;
-        transform: none;
+        position: absolute;
+        bottom: 30px;
+        left: 40px;
+        z-index: 5;
+        color: white;
     }
 
     .hero-text h1 {
-        font-size: 22px; 
+        font-size: 1.8rem; 
+        line-height: 1.2;
     }
 
-    .music-section {
-        flex-direction: column; 
-        align-items: center;
+    .hero-text p {
+        font-size: 14px;
+        max-width: 350px;
+        margin-bottom: 15px;
     }
 
-    .music-card {
+    /* Slider Navigation Buttons */
+    .btn-slider {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.4);
+        color: white;
+        border: none;
+        padding: 15px;
+        cursor: pointer;
+        z-index: 100;
+        font-size: 20px;
+        transition: 0.3s;
+    }
+
+    .btn-slider:hover {
+        background: rgba(255,255,255,0.8);
+        color: black;
+    }
+
+    .prev { left: 0; border-radius: 0 5px 5px 0; }
+    .next { right: 0; border-radius: 5px 0 0 5px; }
+
+    /* --------------------------------------------------- */
+    /* 5. COMIC GRID & CARDS */
+    /* --------------------------------------------------- */
+    .comic-container {
+        flex: 1;
+        padding: 50px 20px;
+    }
+
+    .comic-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        align-items: start;
+    }
+
+    .card {
+        background: var(--color-bg-cream);
+        padding: 15px;
+        border-radius: 15px;
+        transition: 0.3s;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .card-image {
+        position: relative;
         width: 100%;
+        aspect-ratio: 3 / 4;
+        border-radius: 10px;
+        overflow: hidden;
     }
-}
+
+    .cover {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .flag {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        width: 22px;
+        border: 1px solid white;
+        border-radius: 2px;
+    }
+
+    .card-info {
+        text-align: center;
+        margin-top: 12px;
+    }
+
+    .card-info h2 {
+        font-size: 14px;
+        color: var(--color-text-dark);
+        margin-bottom: 10px;
+        height: 40px;
+        overflow: hidden;
+        display: -webkit-box;
+        /* -webkit-line-clamp: 2; */
+        -webkit-box-orient: vertical;
+    }
+
+    .btn-chapter {
+        background: var(--color-btn-purple);
+        color: white;
+        border: none;
+        padding: 8px;
+        width: 100%;
+        border-radius: 20px;
+        font-size: 12px;
+        cursor: pointer;
+    }
+
+    /* --------------------------------------------------- */
+    /* 6. FOOTER */
+    /* --------------------------------------------------- */
+    .footer {
+        background: var(--color-bg-cream);
+        text-align: center;
+        padding: 20px;
+        margin-top: auto;
+        border-top: 1px solid #ddd;
+    }
+
+    /* --------------------------------------------------- */
+    /* 7. RESPONSIVE QUERIES */
+    /* --------------------------------------------------- */
+    @media (max-width: 900px) {
+        .comic-grid { grid-template-columns: repeat(2, 1fr); }
+        #banner-slider { aspect-ratio: 4/3; }
+        .hero-text h1 { font-size: 36px; }
+    }
+
+    @media (max-width: 500px) {
+        .comic-grid { grid-template-columns: 1fr; }
+        .hero-text { left: 20px; }
+        .hero-text h1 { font-size: 28px; }
+    }
+
+    /* --------------------------------------------------- */
+    .comic-container {
+        width: 100%;
+        padding: 20px 15px; 
+    }
+
+    .comic-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 25px;
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        align-items: start;
+    }
+
+    @media (max-width: 1024px) {
+        .comic-grid {
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .comic-grid {
+            grid-template-columns: repeat(2, 1fr); 
+            width: 95%;
+        }
+        
+        .navbar { padding: 10px 20px; }
+        .nav-links { display: none; } 
+    }
+
+
+    @media (max-width: 480px) {
+        .comic-grid {
+            grid-template-columns: repeat(1, 1fr); 
+        }
+        .hero-text h1 { font-size: 24px; }
+    }
+
+
