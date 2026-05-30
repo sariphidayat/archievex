@@ -1,6 +1,7 @@
 [
   {
     "id": "orv-01",
+    "arrow_picture": "assets/gambar/back.png",
     "picture": "assets/gambar/bebeb.jpg",
     "title": "Omniscient Reader Viewpoint",
     "sub_title": "Perspektif Pembaca Mahatahu | 전지적 독자 시점",
@@ -29,16 +30,17 @@
       "UMI"
     ],
     "format": "Manhwa",
-    "status": "On-Going",
+    "status": "Hiatus",
     "chapters": {
-      "start": 273,
-      "end": 308
+      "start": 264,
+      "end": 311
     },
-    "info_desc": "<p><strong>Jadwal:</strong> Setiap Senin malam.</p> <p><strong>Penerbit:</strong> WEBTOON Entertainment.</p> <p><strong>Sinopsis Singkat:</strong> Kisah perjuangan seorang pembaca tunggal di dunia yang hancur sesuai novel yang ia baca.</p>",
+    "info_desc": "<p><strong>Jadwal:</strong> Sedang hiatus persiapan season.</p> <p><strong>Penerbit:</strong> Naver Webtoon.</p> <p><strong>Sinopsis Singkat:</strong> Kisah perjuangan seorang pembaca tunggal di dunia yang hancur sesuai novel yang ia baca.</p>",
     "read_link": "https://www.webtoons.com/id/fantasy/omniscient-reader/list?title_no=2109"
   },
   {
     "id": "frn-01",
+    "arrow_picture": "assets/gambar/back.png",
     "picture": "assets/gambar/reren.jpg",
     "title": "Frieren: Beyond Journey’s End",
     "sub_title": "葬送のフリーレン",
@@ -65,16 +67,17 @@
       "ABE Tsukasa"
     ],
     "format": "Manga",
-    "status": "On-Going",
+    "status": "Hiatus Indefinite",
     "chapters": {
-      "start": 133,
+      "start": 100,
       "end": 147
     },
-    "info_desc": "<p>Info di sini.</p>",
+    "info_desc": "<p><strong>Jadwal:</strong> Sedang hiatus.</p> <p><strong>Penerbit:</strong> Weekly Shōnen Sunday.</p> <p><strong>Sinopsis Singkat:</strong> Penyihir abadi belajar memahami arti kenangan setelah teman-temannya tiada.</p>",
     "read_link": "https://www.viz.com/frieren-beyond-journeys-end"
   },
   {
     "id": "scv-01",
+    "arrow_picture": "assets/gambar/back.png",
     "picture": "assets/gambar/ayang.jpg",
     "title": "Special Civil Servant",
     "sub_title": "Extraordinary Civil Servant | 별정직 공무원",
@@ -100,16 +103,17 @@
       "Baesaem"
     ],
     "format": "Manhwa",
-    "status": "On-Going",
+    "status": "Hiatus",
     "chapters": {
-      "start": 53,
-      "end": 67
+      "start": 21,
+      "end": 68
     },
-    "info_desc": "<p>Info di sini.</p>",
+    "info_desc": "<p><strong>Jadwal:</strong> Sedang hiatus.</p> <p><strong>Penerbit:</strong> Naver Webtoon.</p> <p><strong>Sinopsis Singkat:</strong> Kisah seorang pengangguran yang akhirnya jadi PNS, tapi tugasnya bukan mengurus dokumen melainkan bertaruh nyawa melawan monster.</p>",
     "read_link": "https://www.webtoons.com/id/fantasy/special-civil-servant/list?title_no=7018"
   },
   {
     "id": "mdd-01",
+    "arrow_picture": "assets/gambar/back.png",
     "picture": "assets/gambar/gojo.jpg",
     "title": "My Dress-Up Darling",
     "sub_title": "その着せ替え人形は恋をする",
@@ -133,16 +137,17 @@
       "Shinichi Fukuda"
     ],
     "format": "Manga",
-    "status": "On-Going",
+    "status": "End",
     "chapters": {
-      "start": 99,
-      "end": 113
+      "start": 68,
+      "end": 115
     },
-    "info_desc": "<p>Info di sini.</p>",
+    "info_desc": "<p><strong>Jadwal:</strong> Tamat.</p> <p><strong>Penerbit:</strong> Square Enix.</p> <p><strong>Sinopsis Singkat:</strong> Kisah pembuat boneka pemalu dan gadis ceria yang menjalin asmara lewat hobi membuat kostum cosplay.</p>",
     "read_link": "https://global.manga-up.com/manga/113"
   },
   {
     "id": "srn-01",
+    "arrow_picture": "assets/gambar/back.png",
     "picture": "assets/gambar/sren.jpg",
     "title": "Serena",
     "sub_title": "-",
@@ -167,16 +172,17 @@
       "Ina"
     ],
     "format": "Manhwa",
-    "status": "On-Going",
+    "status": "Hiatus",
     "chapters": {
-      "start": 114,
+      "start": 81,
       "end": 128
     },
-    "info_desc": "<p>Info di sini.</p>",
+    "info_desc": "<p><strong>Jadwal:</strong> Sedang hiatus persiapan season.</p> <p><strong>Penerbit:</strong> Naver Webtoon.</p> <p><strong>Sinopsis Singkat:</strong> Serena, pewaris hotel yang egois, terjebak dalam pernikahan kontrak tanpa cinta dengan Eiser demi menyelamatkan bisnis keluarganya yang di ambang kehancuran.</p>",
     "read_link": "https://www.webtoons.com/id/romantic-fantasy/serena/list?title_no=5001"
   },
   {
     "id": "kpr-01",
+    "arrow_picture": "assets/gambar/back.png",
     "picture": "assets/gambar/atok.jpg",
     "title": "Killer Peter",
     "sub_title": "Bad Killer",
@@ -201,14 +207,15 @@
     "format": "Manhwa",
     "status": "On-Going",
     "chapters": {
-      "start": 107,
+      "start": 74,
       "end": 121
     },
-    "info_desc": "<p>Info di sini.</p>",
+    "info_desc": "<p><strong>Jadwal:</strong> Setiap Sabtu.</p> <p><strong>Penerbit:</strong> Naver Webtoon.</p> <p><strong>Sinopsis Singkat:</strong> Pembunuh legendaris yang kembali ke raga muda untuk membalas dendam pada organisasi yang mengkhianatinya.</p>",
     "read_link": "https://www.webtoons.com/id/action/killer-peter/list?title_no=5846"
   },
   {
     "id": "dmd-01",
+    "arrow_picture": "assets/gambar/back.png",
     "picture": "assets/gambar/dormdu.jpg",
     "title": "Dorm Du",
     "sub_title": "-",
@@ -234,14 +241,15 @@
     "format": "Komik",
     "status": "On-Going",
     "chapters": {
-      "start": 49,
+      "start": 16,
       "end": 63
     },
-    "info_desc": "<p>Info di sini.</p>",
+    "info_desc": "<p><strong>Jadwal:</strong> Setiap Kamis.</p> <p><strong>Penerbit:</strong> LINE Webtoon Indonesia.</p> <p><strong>Sinopsis Singkat:</strong> Kisah misteri seorang gadis yang berusaha bertahan hidup dan mengungkap rahasia kelam di asrama sekolah yang mengerikan.</p>",
     "read_link": "https://www.webtoons.com/id/fantasy/dorm-du/list?title_no=6171"
   },
   {
     "id": "fdm-01",
+    "arrow_picture": "assets/gambar/back.png",
     "picture": "assets/gambar/papa.jpg",
     "title": "Father, I Don't Want This Marriage!",
     "sub_title": "-",
@@ -268,52 +276,52 @@
       "Roal"
     ],
     "format": "Manhwa",
-    "status": "On-Going",
+    "status": "End",
     "chapters": {
-      "start": 100,
-      "end": 114
+      "start": 72,
+      "end": 119
     },
-    "info_desc": "<p>Info di sini.</p>",
+    "info_desc": "<p><strong>Jadwal:</strong> Tamat.</p> <p><strong>Penerbit:</strong> Kakao Webtoon.</p> <p><strong>Sinopsis Singkat:</strong> Kisah salah paham antara putri yang takut mati dan ayah dingin yang ternyata sangat protektif, saat sang putri mencoba menghindari pernikahan kontrak.</p>",
     "read_link": "https://www.webtoons.com/id/romantic-fantasy/ayah-aku-tidak-mau-menikah/list?title_no=8606"
   },
   {
     "id": "ddn-01",
+    "arrow_picture": "assets/gambar/back.png",
     "picture": "assets/gambar/dan.jpg",
     "title": "Dandadan",
     "sub_title": "-",
     "country": {
-        "name": "Korea",
-        "flag": "kr_flag.jpg"
+        "name": "Japan",
+        "flag": "jp_flag.jpg"
     },
     "stars": "8.21",
     "statistics": "348,963",
     "views": "14.5m",
-    "description": "Setelah gagal menjadi PNS level 9 untuk keempat kalinya, Han Maru melewati banyak lika-liku hingga menjadi PNS khusus di bawah Kementerian Lingkungan Hidup. Selamat tinggal kehidupan kosan kecil dan makanan instan dari minimarket! Tapi, kebahagiaan itu hanya sementara... karena ternyata pekerjaannya melibatkan tugas rahasia negara yang mempertaruhkan nyawa! Para monster datang ke dunia manusia bersama debu kuning, membunuh dan memakan manusia. Tugas Han Maru sebagai PNS khusus level 9 adalah berperang melawan mereka. Kehidupan Han Maru sebagai PNS tidak biasa dimulai!",
+    "description": "Seorang pemuda yang tak percaya hantu dan seorang gadis yang tak percaya alien dipertemukan dengan fenomena ajaib di luar nalar. Kisah masa muda yang dibalut misteri supranatural!!",
     "genres": [
       "Action",
-      "Adventure",
-      "Demon",
+      "Sci-fi",
+      "Supernatural",
       "Comedy"
     ],
     "authors": [
-      "Kwon Sora",
-      "Seo Jaewon"
+      "Yukinobu Tatsu"
     ],
     "artists": [
-      "Baesaem",
-      "Chamuring"
+      "Yukinobu TatsuBaesaem"
     ],
-    "format": "Manhwa",
+    "format": "Manga",
     "status": "On-Going",
     "chapters": {
-      "start": 53,
-      "end": 67
+      "start": 187,
+      "end": 234
     },
-    "info_desc": "<p>Info di sini.</p>",
-    "read_link": ""
+    "info_desc": "<p><strong>Jadwal:</strong> Setiap Senin.</p> <p><strong>Penerbit:</strong> Shueisha.</p> <p><strong>Sinopsis Singkat:</strong> Persaingan antara pencinta hantu dan alien yang berubah jadi kerja sama kacau untuk merebut kembali 'aset berharga' yang dicuri makhluk halus.</p>",
+    "read_link": "https://mangaplus.shueisha.co.jp/titles/400007"
   },
   {
     "id": "tpv-01",
+    "arrow_picture": "assets/gambar/back.png",
     "picture": "assets/gambar/alon.jpg",
     "title": "The Patron of Villains",
     "sub_title": "-",
@@ -340,14 +348,15 @@
     "format": "Manhwa",
     "status": "On-Going",
     "chapters": {
-      "start": 19,
-      "end": 32
+      "start": 1,
+      "end": 37
     },
-    "info_desc": "<p>Info di sini.</p>",
+    "info_desc": "<p><strong>Jadwal:</strong> Setiap Jumat.</p> <p><strong>Penerbit:</strong> Naver Webtoon.</p> <p><strong>Sinopsis Singkat:</strong> Alon masuk ke dunia game dan jadi 'donatur' para calon penjahat cilik supaya mereka tidak membunuhnya di masa depan.</p>",
     "read_link": "https://www.webtoons.com/en/fantasy/the-patron-of-villains/list?title_no=9321"
   },
   {
     "id": "mtx-01",
+    "arrow_picture": "assets/gambar/back.png",
     "picture": "assets/gambar/trap.jpg",
     "title": "Marriage Toxin",
     "sub_title": "マリッジトキシン",
@@ -374,14 +383,15 @@
     "format": "Manga",
     "status": "On-Going",
     "chapters": {
-      "start": 148,
-      "end": 162
+      "start": 119,
+      "end": 166
     },
-    "info_desc": "<p>Info di sini.</p>",
+    "info_desc": "<p><strong>Jadwal:</strong> Setiap Selasa.</p> <p><strong>Penerbit:</strong> Shueisha.</p> <p><strong>Sinopsis Singkat:</strong> Seorang pembunuh ahli racun yang cupu dalam percintaan menyewa penipu cinta untuk membantunya mencari istri lewat misi-misi berbahaya.</p>",
     "read_link": "https://mangaplus.shueisha.co.jp/titles/100190"
   },
   {
     "id": "wmp-01",
+    "arrow_picture": "assets/gambar/back.png",
     "picture": "assets/gambar/end.jpg",
     "title": "Who Made Me a Princess?",
     "sub_title": "Suddenly, I Became A Princess",
@@ -405,16 +415,17 @@
       "Spoon"
     ],
     "format": "Manhwa",
-    "status": "On-Going",
+    "status": "End",
     "chapters": {
-      "start": 135,
-      "end": 141
+      "start": 83,
+      "end": 130
     },
-    "info_desc": "<p>Info di sini.</p>",
-    "read_link": ""
+    "info_desc": "<p><strong>Jadwal:</strong> Tamat.</p> <p><strong>Penerbit:</strong> Carrotoon.</p> <p><strong>Sinopsis Singkat:</strong> Kisah perjuangan seorang putri cilik menarik perhatian ayah kandungnya yang kejam agar tidak dibunuh saat dewasa nanti.</p>",
+    "read_link": "https://www.webtoons.com/id/romantic-fantasy/became-a-princess/list?title_no=1588"
   },
   {
     "id": "php-01",
+    "arrow_picture": "assets/gambar/back.png",
     "picture": "assets/gambar/hoyoul.jpg",
     "title": "The Player Hides His Past",
     "sub_title": "플레이어는 과거를 숨긴다",
@@ -443,20 +454,21 @@
     "format": "Manhwa",
     "status": "On-Going",
     "chapters": {
-      "start": 104,
-      "end": 118
+      "start": 76,
+      "end": 123
     },
-    "info_desc": "<p>Info di sini.</p>",
+    "info_desc": "<p><strong>Jadwal:</strong> Setiap Kamis.</p> <p><strong>Penerbit:</strong> Naver Webtoon.</p> <p><strong>Sinopsis Singkat:</strong> Mantan bocah cringe terperangkap dalam tubuh karakter game buatannya yang super jaim dan harus membasmi monster sambil menjaga martabatnya.</p>",
     "read_link": "https://www.webtoons.com/id/fantasy/the-player-hides-his-past/list?title_no=7431"
   },
   {
     "id": "wee-01",
+    "arrow_picture": "assets/gambar/back.png",
     "picture": "assets/gambar/wee.jpg",
     "title": "WEE!!!",
     "sub_title": "-",
     "country": {
         "name": "Indonesia",
-        "flag": "id_flag.jpg"
+        "flag": "id_flag.png"
     },
     "stars": "6.41",
     "statistics": "61,593",
@@ -476,14 +488,15 @@
     "format": "Komik",
     "status": "On-Going",
     "chapters": {
-      "start": 412,
-      "end": 426
+      "start": 393,
+      "end": 440
     },
-    "info_desc": "<p>Info di sini.</p>",
+    "info_desc": "<p><strong>Jadwal:</strong> Setiap Selasa dan Sabtu.</p> <p><strong>Penerbit:</strong> Line Webtoon Indonesia.</p> <p><strong>Sinopsis Singkat:</strong> Kehidupan sekolah Amu yang penuh kekonyolan bareng teman-teman gengnya yang gak ada yang normal.</p>",
     "read_link": "https://www.webtoons.com/id/slice-of-life/wee/list?title_no=3085"
   },
   {
     "id": "ele-01",
+    "arrow_picture": "assets/gambar/back.png",
     "picture": "assets/gambar/oyen.jpg",
     "title": "Eleceed",
     "sub_title": "-",
@@ -509,20 +522,21 @@
     "format": "Manhwa",
     "status": "On-Going",
     "chapters": {
-      "start": 386,
-      "end": 399
+      "start": 354,
+      "end": 401
     },
-    "info_desc": "<p>Info di sini.</p>",
+    "info_desc": "<p><strong>Jadwal:</strong> Setiap Minggu.</p> <p><strong>Penerbit:</strong> Naver Webtoon.</p> <p><strong>Sinopsis Singkat:</strong> Kerja sama antara bocah super baik hati dan guru kucing oren yang aslinya petarung terkuat di dunia.</p>",
     "read_link": "https://www.webtoons.com/id/fantasy/eleceed/list?title_no=2034"
   },
   {
     "id": "ded-01",
+    "arrow_picture": "assets/gambar/back.png",
     "picture": "assets/gambar/dedes.jpg",
     "title": "Dedes",
     "sub_title": "-",
     "country": {
         "name": "Indonesia",
-        "flag": "id_flag.jpg"
+        "flag": "id_flag.png"
     },
     "stars": "5.64",
     "statistics": "187,543",
@@ -540,16 +554,17 @@
       "egestigi"
     ],
     "format": "Komik",
-    "status": "On-Going",
+    "status": "Hiatus",
     "chapters": {
-      "start": 386,
-      "end": 399
+      "start": 83,
+      "end": 130
     },
-    "info_desc": "<p>Info di sini.</p>",
+    "info_desc": "<p><strong>Jadwal:</strong> Sedang hiatus persiapan season.</p> <p><strong>Penerbit:</strong> Line Webtoon Indonesia.</p> <p><strong>Sinopsis Singkat:</strong> Kisah perjuangan dan dilema Ken Dedes dalam menghadapi takdir politik serta cinta segitiga yang mengubah sejarah Nusantara.</p>",
     "read_link": "https://www.webtoons.com/id/romantic-fantasy/dedes/list?title_no=3938"
   },
   {
     "id": "bbt-01",
+    "arrow_picture": "assets/gambar/back.png",
     "picture": "assets/gambar/ciel.jpg",
     "title": "Black Butler",
     "sub_title": "黒執事",
@@ -575,17 +590,18 @@
     "format": "Manga",
     "status": "On-Going",
     "chapters": {
-      "start": 202,
+      "start": 169,
       "end": 216
     },
-    "info_desc": "<p>Info di sini.</p>",
+    "info_desc": "<p><strong>Jadwal:</strong> -.</p> <p><strong>Penerbit:</strong> Square Enix.</p> <p><strong>Sinopsis Singkat:</strong> Aksi pelayan iblis serbabisa yang melindungi tuannya sambil memecahkan kasus-kasus gelap di London era Victoria..</p>",
     "read_link": "https://global.manga-up.com/manga/526"
   },
   {
     "id": "otw-01",
+    "arrow_picture": "assets/gambar/back.png",
     "picture": "assets/gambar/mama.jpg",
     "title": "On The Way To Meet Mom",
-    "sub_title": "On the Way to See Mom | 엄마를 만나러 가는 길",
+    "sub_title": "엄마를 만나러 가는 길",
     "country": {
         "name": "Korea",
         "flag": "kr_flag.jpg"
@@ -609,13 +625,14 @@
     "status": "On-Going",
     "chapters": {
       "start": 27,
-      "end": 32
+      "end": 44
     },
-    "info_desc": "<p>Info di sini.</p>",
-    "read_link": "https://g.shinigami.asia/series/2b826da7-3787-4370-95ad-7da2dd7d44b2"
+    "info_desc": "<p><strong>Jadwal:</strong> Setiap Selasa.</p> <p><strong>Penerbit:</strong> Naver Webtoon.</p> <p><strong>Sinopsis Singkat:</strong> Perjalanan penuh rindu seorang anak untuk menemukan ibunya kembali lewat kenangan dan pertemuan yang menyentuh.</p>",
+    "read_link": "https://www.webtoons.com/id/drama/on-the-way-to-meet-mom/list?title_no=7620"
   },
   {
     "id": "mtp-01",
+    "arrow_picture": "assets/gambar/back.png",
     "picture": "assets/gambar/moriarty.jpg",
     "title": "Morriarty The Patriot",
     "sub_title": "憂国のモリアーティ",
@@ -642,14 +659,15 @@
     "format": "Manga",
     "status": "On-Going",
     "chapters": {
-      "start": 62,
-      "end": 76
+      "start": 47,
+      "end": 94
     },
-    "info_desc": "<p>Info di sini.</p>",
+    "info_desc": "<p><strong>Jadwal:</strong> Setiap Sebulan sekali.</p> <p><strong>Penerbit:</strong> Shueisha.</p> <p><strong>Sinopsis Singkat:</strong> Kisah sang penjahat jenius Moriarty yang melakukan kejahatan terencana demi menciptakan keadilan sosial di London.</p>",
     "read_link": "https://www.viz.com/manga-books/manga/moriarty-the-patriot-volume-1-0/product/6426"
   },
   {
     "id": "onp-01",
+    "arrow_picture": "assets/gambar/back.png",
     "picture": "assets/gambar/piece.jpg",
     "title": "One Piece",
     "sub_title": "ワンピース",
@@ -677,10 +695,10 @@
     "format": "Manga",
     "status": "On-Going",
     "chapters": {
-      "start": 1161,
-      "end": 1175
+      "start": 1136,
+      "end": 1183
     },
-    "info_desc": "<p>Info di sini.</p>",
+    "info_desc": "<p><strong>Jadwal:</strong> Setiap Minggu.</p> <p><strong>Penerbit:</strong> Shueisha.</p> <p><strong>Sinopsis Singkat:</strong> Petualangan epik Luffy dan krunya mengarungi lautan berbahaya untuk mencari harta karun terbesar sambil melawan tirani Pemerintah Dunia.</p>",
     "read_link": "https://mangaplus.shueisha.co.jp/titles/100020"
   }
 ]
