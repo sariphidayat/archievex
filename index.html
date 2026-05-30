@@ -35,7 +35,7 @@
 
         <div class="flex items-center gap-4">
             <div class="flex items-center bg-white px-3 py-1 rounded-full border border-gray-200">
-                <input type="text" id="search-input" placeholder="Cari bookmark..."
+                <input type="text" id="search-input" x-model="searchQuery" placeholder="Cari komik..."
                     class="bg-transparent outline-none text-xs w-24 md:w-32 text-gray-700">
                 <img src="assets/gambar/search.png" class="w-4 h-4 opacity-40" alt="Search">
             </div>
@@ -49,59 +49,37 @@
         </div>
     </header>
 
-    <section class="hero-wrapper">
-        <div id="banner-slider">
-            <button class="btn-slider prev" @click="manualMove(-1)">&#10094;</button>
-            <button class="btn-slider next" @click="manualMove(1)">&#10095;</button>
+    <section class="hero-wrapper h-[300px] md:h-[350px] overflow-hidden relative">
+        <div id="banner-slider" class="h-full w-full">
+            <button class="btn-slider prev z-10" @click="manualMove(-1)">&#10094;</button>
+            <button class="btn-slider next z-10" @click="manualMove(1)">&#10095;</button>
 
-            <div class="slider-track" id="sliderTrack">
-                <div class="slide">
-                    <img src="assets/gambar/slider.png" alt="Featured Stories Banner">
-                    <div class="hero-text">
-                        <h1>Read Your<br>Favorite Stories</h1>
-                        <p>Koleksi komik terbaru dan terlengkap dalam satu genggaman. Nikmati pengalaman baca yang
-                            mulus.</p>
-                        <a href="orv.html" class="btn-start" style="text-decoration: none; display: inline-block;">Start
-                            Reading</a>
+            <div class="slider-track flex h-full" id="sliderTrack">
+                <div class="slide min-w-full h-full relative">
+                    <img src="assets/gambar/slider.png" alt="Featured" class="w-full h-full object-cover">
+                    <div class="hero-text absolute inset-0 flex flex-col justify-center px-10 bg-black/20">
+                        <h1 class="text-2xl md:text-4xl font-bold">Read Your<br>Favorite Stories</h1>
+                        <p class="text-sm max-w-md hidden md:block">Koleksi komik terbaru dan terlengkap dalam satu genggaman.</p>
+                        <a href="#comic-grid" class="btn-start mt-4 w-fit px-6 py-2 bg-purple-600 rounded-full text-sm">Start Reading</a>
                     </div>
                 </div>
-                <div class="slide"><img src="assets/gambar/bannerfr.jpg" alt="Frieren Banner"></div>
-                <div class="slide"><img src="assets/gambar/bannerorv.jpg" alt="ORV Banner"></div>
-            </div>
-        </div>
-    </section>
+            
+                <div class="slide min-w-full h-full">
+                    <img src="assets/gambar/bannerfr.jpg" alt="Frieren" class="w-full h-full object-cover">
+                </div>
 
-    <section class="music-section">
-        <div class="music-card">
-            <audio id="audioORV" preload="metadata">
-                <source src="assets/musik/orv_theme.mp3" type="audio/mpeg">
-            </audio>
-            <div class="music-info">
-                <p>Lagu Skenario</p>
-                <span>Omniscient Reader's Viewpoint</span>
+                <div class="slide min-w-full h-full">
+                    <img src="assets/gambar/bannerorv.jpg" alt="ORV" class="w-full h-full object-cover">
+                </div>
             </div>
-            <button id="btnORV" @click="togglePlayPause('audioORV', 'btnORV')" class="btn-play-custom"></button>
-        </div>
-
-        <div class="music-card">
-            <audio id="audioFrieren" preload="metadata">
-                <source src="assets/musik/fren_theme.mpeg" type="audio/mpeg">
-            </audio>
-            <div class="music-info">
-                <p>Audio Perjalanan</p>
-                <span>Frieren: Beyond Journey's End</span>
-            </div>
-            <button id="btnFrieren" @click="togglePlayPause('audioFrieren', 'btnFrieren')"
-                class="btn-play-custom"></button>
-            <!-- <button id="btnFrieren" @click="console.log('test')" class="btn-play-custom"></button> -->
         </div>
     </section>
 
     <main class="comic-container">
-        <div class="comic-grid">
+        <div class="comic-grid" id="comic-grid">
 
             <template x-for="comic in comics" :key="comic.id">
-                <a :href="'detail.html?id=' + comic.id" class="card" style="text-decoration: none;">
+                <a x-show="searchQuery === '' || comic.title.toLowerCase().includes(searchQuery.toLowerCase())" :href="'detail.html?id=' + comic.id" class="card" style="text-decoration: none;">
                     <div class="card-image">
                         <img :src="comic.picture" class="cover" :alt="'Cover ' + comic.title" loading="lazy" />
                         <img :src="'assets/gambar/' + comic.country.flag" class="flag" :alt="comic.country.name + ' Flag'" />
