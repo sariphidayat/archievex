@@ -295,17 +295,29 @@ body {
         padding: 10px !important;
     }
 
+    .btn-chapter {
+        font-size: 10px !important; 
+        padding: 5px 8px !important;  
+    }
+
+    .card-info h2 {
+        font-size: 11px !important;
+        height: 32px !important;
+        margin-bottom: 5px !important;
+    }
+
     .navbar { padding: 10px 15px; height: 70px; }
     .nav-links { display: none; }
     .hero-wrapper { height: 250px !important; }
+    
     .hero-text {
-        left: 20px !important;
+        left: 10% !important;
         bottom: 20px !important;
     }
 
     .hero-text h1 {
         font-size: 1.2rem !important;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        text-shadow: none !important; 
     }
 
     .hero-text p {
@@ -313,7 +325,7 @@ body {
         font-size: 10px !important;
         max-width: 200px !important;
         margin-bottom: 5px !important;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        text-shadow: none !important; 
     }
 }
 
@@ -321,6 +333,15 @@ body {
     .comic-grid {
         grid-template-columns: repeat(2, 1fr) !important; 
         gap: 10px !important;
+    }
+    
+    .btn-chapter {
+        font-size: 5px !important;
+        padding: 4px 6px !important;
+    }
+
+    .card-info h2 {
+        font-size: 10px !important;
     }
     
     .hero-text h1 { font-size: 1rem !important; }
