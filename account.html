@@ -3,26 +3,25 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AchieveX - Account Setting</title>
+    <title>ArchieveX - Account Setting</title>
     <link rel="stylesheet" href="assets/css/index.css" />
     <link rel="stylesheet" href="assets/css/account.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Prompt:wght@700&display=swap" rel="stylesheet">
+    <script defer src="assets/js/alpine.min.js"></script>
 </head>
-<body>
+<body x-data="accountApp()" x-init="init()">
 
     <header class="navbar">
         <div class="header-left">
-            <div class="logo-wrapper">
-                <a href="index.html">
-                    <img src="assets/gambar/icon.png" class="logo-icon" alt="Logo AchieveX" />
-                </a>
-            </div>
+            <a href="index.html">
+                <img src="assets/gambar/icon.png" class="logo-icon" alt="Logo ArchieveX" />
+            </a>
             <nav class="nav-links">
                 <a href="index.html">Home</a>
                 <div class="divider"></div>
                 <a href="bookmark.html">Bookmark</a>
                 <div class="divider"></div>
-                <a href="other.html">Other</a>
+                <a href="about.html">About</a>
             </nav>
         </div>
 
@@ -32,9 +31,14 @@
                 <img src="assets/gambar/search.png" alt="Search" class="icon-small" />
             </div>
             <div class="divider"></div>
-            <a href="account.html">
-                <img src="assets/gambar/Setting.png" alt="Settings" class="icon-small" />
-            </a>
+            <template x-if="!isLoggedIn">
+                <a href="auth.html" class="text-sm font-semibold text-[#333] hover:text-purple-600 transition">Login</a>
+            </template>
+            <template x-if="isLoggedIn">
+                <a href="account.html">
+                    <img src="assets/gambar/Setting.png" alt="Settings" class="icon-small" />
+                </a>
+            </template>
         </div>
     </header>
 
@@ -45,39 +49,127 @@
             </button>
 
             <h1 class="setting-title">Account Setting</h1>
-            
-            <div class="profile-pic">
-                <img src="assets/gambar/poto profil.png" alt="Profile Picture" />
-            </div>
 
-            <div class="user-info">
-                <div class="info-row">
-                    <span class="label">Name</span>
-                    <span class="colon">:</span>
-                    <span class="value">Singgit5</span>
+            <template x-if="!isLoggedIn">
+                <div class="py-10 text-center">
+                    <p class="text-white/70 mb-4">Anda belum login.</p>
+                    <a href="auth.html" class="inline-block bg-[#897FA4] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#6f62a0] transition">Login / Daftar</a>
                 </div>
-                <div class="info-row">
-                    <span class="label">E-Mail</span>
-                    <span class="colon">:</span>
-                    <span class="value">kusuka4951@gmail.com</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">Password</span>
-                    <span class="colon">:</span>
-                    <span class="value password-dots">••••••••</span>
-                </div>
-            </div>
+            </template>
 
-            <button class="btn-logout" onclick="alert('Logged Out!')">
-                <img src="assets/gambar/Combined-Shape.png" alt="Logout Icon" class="logout-icon">
-                <span>Logout</span>
-            </button>
+            <template x-if="isLoggedIn && loading">
+                <div class="py-10 text-center text-white/50">Memuat profil...</div>
+            </template>
+
+            <template x-if="isLoggedIn && !loading && user">
+                <div>
+                    <div class="profile-pic">
+                        <img src="assets/gambar/poto profil.png" alt="Profile Picture" />
+                    </div>
+
+                    <div class="user-info">
+                        <div class="info-row">
+                            <span class="label">Username</span>
+                            <span class="colon">:</span>
+                            <span class="value" x-text="user.username"></span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">E-Mail</span>
+                            <span class="colon">:</span>
+                            <span class="value" x-text="user.email"></span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Role</span>
+                            <span class="colon">:</span>
+                            <span class="value capitalize" x-text="user.role"></span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Status</span>
+                            <span class="colon">:</span>
+                            <span class="value" x-text="user.is_active ? 'Aktif' : 'Nonaktif'"></span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Password</span>
+                            <span class="colon">:</span>
+                            <span class="value password-dots">••••••••</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-logout" @click="doLogout()">
+                        <img src="assets/gambar/Combined-Shape.png" alt="Logout Icon" class="logout-icon">
+                        <span x-text="loggingOut ? 'Memproses...' : 'Logout'"></span>
+                    </button>
+                </div>
+            </template>
+
+            <template x-if="isLoggedIn && !loading && !user && error">
+                <div class="py-10 text-center">
+                    <p class="text-red-400 mb-4" x-text="error"></p>
+                    <button @click="init()" class="bg-[#897FA4] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#6f62a0] transition">Coba Lagi</button>
+                </div>
+            </template>
         </div>
     </main>
 
     <footer class="footer">
-        <p>© 2026 AchieveX. All Rights Reserved.</p>
+        <p>&copy; 2026 ArchieveX. All Rights Reserved.</p>
     </footer>
 
+    <script src="assets/js/auth.js"></script>
+    <script>
+        function accountApp() {
+            return {
+                isLoggedIn: false,
+                loading: true,
+                loggingOut: false,
+                user: null,
+                error: '',
+
+                async init() {
+                    this.isLoggedIn = isAuthenticated();
+                    if (!this.isLoggedIn) {
+                        this.loading = false;
+                        return;
+                    }
+                    await this.loadProfile();
+                },
+
+                async loadProfile() {
+                    this.loading = true;
+                    this.error = '';
+                    try {
+                        const res = await fetch(`${API_BASE}/auth/me`, {
+                            headers: getAuthHeaders(),
+                        });
+                        if (!res.ok) {
+                            if (res.status === 401) {
+                                clearAuth();
+                                this.isLoggedIn = false;
+                            } else {
+                                this.error = 'Gagal memuat profil.';
+                            }
+                            this.loading = false;
+                            return;
+                        }
+                        this.user = await res.json();
+                        localStorage.setItem(USER_KEY, JSON.stringify(this.user));
+                    } catch (_) {
+                        this.error = 'Tidak dapat terhubung ke server.';
+                    } finally {
+                        this.loading = false;
+                    }
+                },
+
+                async doLogout() {
+                    this.loggingOut = true;
+                    await logoutUser();
+                    this.isLoggedIn = false;
+                    this.user = null;
+                    this.loggingOut = false;
+                    window.location.href = 'auth.html';
+                },
+            };
+        }
+    </script>
 </body>
 </html>

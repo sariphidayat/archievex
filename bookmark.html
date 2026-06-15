@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AchieveX - Bookmarks</title>
+    <title>ArchieveX - Bookmarks</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="assets/js/alpine.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Prompt:wght@700&display=swap" rel="stylesheet">
@@ -17,12 +17,12 @@
     <header class="fixed top-0 z-[100] w-full h-16 md:h-20 bg-[#FFF8EE] flex items-center justify-between px-4 md:px-10 shadow-lg">
         <div class="flex items-center gap-6">
             <a href="index.html" class="flex items-center">
-                <img src="assets/gambar/icon.png" 
-                class="w-[150px] md:w-[220px] h-auto object-contain block scale-125 origin-left" 
+                <img src="assets/gambar/icon.png"
+                class="w-[150px] md:w-[220px] h-auto object-contain block scale-125 origin-left"
                 alt="Logo">
             </a>
-        
-            <nav id="mobile-menu" 
+
+            <nav id="mobile-menu"
                 :class="{'hidden': !mobileMenuOpen, 'flex': mobileMenuOpen}"
                 class="grid absolute top-16 left-0 w-full bg-[#FFF8EE] flex-col p-4 gap-4 shadow-lg md:static md:flex md:flex-row md:w-auto md:p-0 md:shadow-none md:top-auto text-[#333333] font-semibold text-sm">
                 <a href="index.html" class="hover:text-purple-600 transition">Home</a>
@@ -38,6 +38,12 @@
                 <input type="text" id="search-input" x-model="searchQuery" placeholder="Cari bookmark..." class="bg-transparent outline-none text-xs w-24 md:w-32 text-gray-700">
                 <img src="assets/gambar/search.png" class="w-4 h-4 opacity-40" alt="Search">
             </div>
+            <template x-if="!authenticated">
+                <a href="auth.html" class="hidden md:inline text-sm font-semibold text-[#333] hover:text-purple-600 transition">Login</a>
+            </template>
+            <template x-if="authenticated">
+                <a href="account.html"><img src="assets/gambar/Setting.png" class="w-6 h-6 opacity-80" alt="Settings"></a>
+            </template>
             <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden flex flex-col gap-1">
                 <div class="w-6 h-0.5 bg-gray-800"></div>
                 <div class="w-6 h-0.5 bg-gray-800"></div>
@@ -46,35 +52,39 @@
         </div>
     </header>
 
-    <main class="flex-grow flex justify-center p-4 md:p-10 pt-24 md:pt-32"> <div class="bg-[#5A527A] w-full max-w-[1100px] min-h-[500px] rounded-[30px] md:rounded-[40px] p-6 md:p-10 flex flex-col items-center shadow-2xl border border-white/10">
-            
+    <main class="flex-grow flex justify-center p-4 md:p-10 pt-24 md:pt-32">
+        <div class="bg-[#5A527A] w-full max-w-[1100px] min-h-[500px] rounded-[30px] md:rounded-[40px] p-6 md:p-10 flex flex-col items-center shadow-2xl border border-white/10">
+
             <h2 class="font-prompt text-[#FFD700] text-lg md:text-2xl font-bold tracking-widest uppercase border-b-2 border-[#FFD700] pb-2 mb-10 text-center">
                 BOOKMARK KAMU
             </h2>
 
             <div class="w-full flex-grow">
-                <div id="empty-state" class="flex flex-col items-center justify-center text-center py-20" x-show="bookmarksIsEmpty">
+                <div id="empty-state" class="flex flex-col items-center justify-center text-center py-20" x-show="loading">
+                    <div class="inline-block mb-3 w-10 h-10 border-4 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    <h2 class="text-lg md:text-3xl text-white/50 mb-2">Memuat Bookmark...</h2>
+                </div>
+                <div id="empty-state" class="flex flex-col items-center justify-center text-center py-20" x-show="bookmarks.length === 0 && !loading">
                     <h1 class="text-xl md:text-3xl font-bold mb-2">Kamu Belum Membuat Bookmark...</h1>
                     <p class="text-white/50 text-xs md:text-base mb-6">Cari komik favoritmu sekarang!</p>
                     <a href="index.html" class="bg-[#FFD700] text-[#2a244d] px-6 py-2 rounded-full font-bold text-sm hover:scale-105 transition">Cari Komik</a>
                 </div>
 
-                <div id="bookmark-list" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 w-full">
-                    <!-- Bookmark cards akan dirender di sini -->
-                     <template x-for="(comic, i) in bookmarks" :key="i">
-                        <div x-show="searchQuery === '' || comic.title.toLowerCase().includes(searchQuery.toLowerCase())" class="relative bg-[#3B3267] rounded-xl overflow-hidden border border-white/5 transition-all hover:border-[#FFD700]/50 hover:-translate-y-1 shadow-md group">
-                            <a :href="comic.link">
-                                <img :src="comic.image" class="w-full aspect-[3/4] object-cover block group-hover:brightness-110 transition">
+                <div id="bookmark-list" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 w-full" x-show="bookmarks.length > 0">
+                    <template x-for="(comic, i) in filteredBookmarks" :key="i">
+                        <div class="relative bg-[#3B3267] rounded-xl overflow-hidden border border-white/5 transition-all hover:border-[#FFD700]/50 hover:-translate-y-1 shadow-md group">
+                            <a :href="'detail.html?id=' + (comic.comic_id || comic.id)">
+                                <img :src="comic.picture || comic.image" class="w-full aspect-[3/4] object-cover block group-hover:brightness-110 transition">
                                 <div class="p-2 md:p-3 text-center">
                                     <h3 class="text-[#FFD700] text-[10px] md:text-sm font-bold truncate" x-text="comic.title"></h3>
-                                    <p class="text-[#FFD700]/70 text-[9px] md:text-xs italic truncate" x-text="comic.subtitle"></p>
+                                    <p class="text-[#FFD700]/70 text-[9px] md:text-xs italic truncate" x-text="comic.sub_title || comic.subtitle"></p>
                                 </div>
                             </a>
-                            <button @click="removeBookmark(i)" 
+                            <button @click="removeBookmark(i)"
                                 class="absolute top-2 right-2 bg-red-500 hover:bg-red-600 text-white text-[8px] md:text-[10px] font-bold px-2 py-1 rounded shadow-lg z-10 transition">
                                 HAPUS
                             </button>
-                        </div>>
+                        </div>
                     </template>
                 </div>
             </div>
@@ -82,36 +92,77 @@
     </main>
 
     <footer class="p-10 text-center text-white/30 text-xs">
-        © 2026 ArchieveX. All Rights Reserved.
+        &copy; 2026 ArchieveX. All Rights Reserved.
     </footer>
 
+    <script src="assets/js/auth.js"></script>
     <script>
-
         function myApp() {
-           return {
+            return {
                 searchQuery: '',
                 mobileMenuOpen: false,
                 bookmarks: [],
-                bookmarksIsEmpty: false,
+                loading: true,
+                authenticated: false,
 
                 init() {
+                    this.authenticated = isAuthenticated();
                     this.loadBookmarks();
                 },
 
-                loadBookmarks() {
-                    this.bookmarks = JSON.parse(localStorage.getItem('myBookmarks')) || [];
-                    this.bookmarksIsEmpty = this.bookmarks.length === 0;
+                async loadBookmarks() {
+                    this.loading = true;
 
+                    if (this.authenticated) {
+                        try {
+                            const res = await fetch(`${API_BASE}/api/bookmarks`, {
+                                headers: getAuthHeaders(),
+                            });
+                            if (res.ok) {
+                                const data = await res.json();
+                                this.bookmarks = data.bookmarks || [];
+                            } else if (res.status === 401) {
+                                clearAuth();
+                                this.authenticated = false;
+                            }
+                        } catch (_) {}
+                    }
+
+                    if (!this.authenticated) {
+                        this.bookmarks = JSON.parse(localStorage.getItem('myBookmarks')) || [];
+                    }
+
+                    this.loading = false;
                 },
 
-                removeBookmark(key) {
-                    this.bookmarks.splice(key, 1);
-                    localStorage.setItem('myBookmarks', JSON.stringify(this.bookmarks));
+                get filteredBookmarks() {
+                    if (!this.searchQuery) return this.bookmarks;
+                    return this.bookmarks.filter(b =>
+                        (b.title || '').toLowerCase().includes(this.searchQuery.toLowerCase())
+                    );
+                },
 
-                    // Refresh bookmarks setelah penghapusan
-                    this.loadBookmarks();
-                }
-            }
+                async removeBookmark(index) {
+                    const comic = this.bookmarks[index];
+                    if (!comic) return;
+
+                    if (this.authenticated) {
+                        const comicId = comic.comic_id;
+                        try {
+                            const res = await fetch(`${API_BASE}/api/bookmarks/${comicId}`, {
+                                method: 'DELETE',
+                                headers: getAuthHeaders(),
+                            });
+                            if (res.ok) {
+                                this.bookmarks.splice(index, 1);
+                            }
+                        } catch (_) {}
+                    } else {
+                        this.bookmarks.splice(index, 1);
+                        localStorage.setItem('myBookmarks', JSON.stringify(this.bookmarks));
+                    }
+                },
+            };
         }
     </script>
 </body>

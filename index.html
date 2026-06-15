@@ -38,6 +38,12 @@
                     class="bg-transparent outline-none text-xs w-24 md:w-32 text-gray-700">
                 <img src="assets/gambar/search.png" class="w-4 h-4 opacity-40" alt="Search">
             </div>
+            <template x-if="!isAuthenticated()">
+                <a href="auth.html" class="hidden md:inline text-sm font-semibold text-[#333333] hover:text-purple-600 transition">Login</a>
+            </template>
+            <template x-if="isAuthenticated()">
+                <a href="account.html"><img src="assets/gambar/Setting.png" class="w-6 h-6 opacity-80 hover:opacity-100 transition" alt="Settings"></a>
+            </template>
             <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden flex flex-col gap-1">
                 <div class="w-6 h-0.5 bg-gray-800"></div>
                 <div class="w-6 h-0.5 bg-gray-800"></div>
@@ -94,6 +100,7 @@
     <footer class="footer text-center text-black/30 text-xs p-10">
         <p>© 2026 ArchieveX. All Rights Reserved.</p>
     </footer>
+    <script type="text/javascript" src="assets/js/auth.js"></script>
     <script type="text/javascript" src="assets/js/script-alt.js"></script>
 
 </body>

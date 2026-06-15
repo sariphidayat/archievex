@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArchieveX - Masuk / Daftar</title>
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/auth.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Prompt:wght@700&display=swap" rel="stylesheet">
+    <script defer src="assets/js/alpine.min.js"></script>
+</head>
+<body class="auth-page" x-data="authApp()">
+
+    <header class="navbar">
+        <div class="header-left">
+            <a href="index.html">
+                <img src="assets/gambar/icon.png" class="logo-icon" alt="Logo ArchieveX" />
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="divider"></div>
+                <a href="bookmark.html">Bookmark</a>
+                <div class="divider"></div>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+
+        <div class="nav-icons">
+            <div class="search-container">
+                <input type="text" placeholder="Cari komik..." class="search-input" />
+                <img src="assets/gambar/search.png" alt="Search" class="icon-small" />
+            </div>
+        </div>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-card">
+
+            <h1 class="auth-title" x-text="isLogin ? 'Masuk' : 'Daftar Akun'"></h1>
+            <p class="auth-subtitle" x-text="isLogin ? 'Masuk untuk melanjutkan membaca' : 'Buat akun baru untuk memulai'"></p>
+
+            <div x-show="error" class="auth-alert error" x-text="error"></div>
+            <div x-show="success" class="auth-alert success" x-text="success"></div>
+
+            <form class="auth-form" x-show="isLogin" @submit.prevent="login()">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input id="login-email" type="email" x-model="loginEmail" placeholder="Masukkan email"
+                        :class="{'field-error': errors.email}" autocomplete="email" />
+                    <div class="field-error-msg" x-show="errors.email" x-text="errors.email"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input id="login-password" type="password" x-model="loginPassword" placeholder="Masukkan password"
+                        :class="{'field-error': errors.password}" autocomplete="current-password" />
+                    <div class="field-error-msg" x-show="errors.password" x-text="errors.password"></div>
+                </div>
+
+                <button type="submit" class="btn-auth" :disabled="loading">
+                    <span x-show="loading" class="spinner"></span>
+                    <span x-text="loading ? 'Memproses...' : 'Login'"></span>
+                </button>
+            </form>
+
+            <form class="auth-form" x-show="!isLogin" @submit.prevent="register()">
+                <div class="form-group">
+                    <label for="reg-email">Email</label>
+                    <input id="reg-email" type="email" x-model="regEmail" placeholder="Masukkan email"
+                        :class="{'field-error': errors.email}" autocomplete="email" />
+                    <div class="field-error-msg" x-show="errors.email" x-text="errors.email"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="reg-username">Username</label>
+                    <input id="reg-username" type="text" x-model="regUsername" placeholder="Pilih username"
+                        :class="{'field-error': errors.username}" autocomplete="username" />
+                    <div class="field-error-msg" x-show="errors.username" x-text="errors.username"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="reg-password">Password</label>
+                    <input id="reg-password" type="password" x-model="regPassword" placeholder="Buat password"
+                        :class="{'field-error': errors.password}" autocomplete="new-password" />
+                    <div class="field-error-msg" x-show="errors.password" x-text="errors.password"></div>
+                </div>
+
+                <button type="submit" class="btn-auth" :disabled="loading">
+                    <span x-show="loading" class="spinner"></span>
+                    <span x-text="loading ? 'Memproses...' : 'Daftar'"></span>
+                </button>
+            </form>
+
+            <div class="auth-toggle">
+                <template x-if="isLogin">
+                    <p>Belum punya akun? <a @click="switchToRegister">Daftar di sini</a></p>
+                </template>
+                <template x-if="!isLogin">
+                    <p>Sudah punya akun? <a @click="switchToLogin">Masuk di sini</a></p>
+                </template>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 ArchieveX. All Rights Reserved.</p>
+    </footer>
+
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>
