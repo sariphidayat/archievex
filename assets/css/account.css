@@ -6,15 +6,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 20px;
-    background-color: #3B3267; 
 }
 
 /* --------------------------------------------------- */
    /* 2. ACCOUNT CARD */
 /* --------------------------------------------------- */
 .account-card {
-    background-color: rgba(137, 127, 164, 0.3); 
+    /* background-color: rgba(137, 127, 164, 0.3);  */
+    background: rgba(52, 46, 77, 0.85);
+    background-color: rgb(90 82 122 / var(--tw-bg-opacity, 1));
     width: 100%;
     max-width: 500px;
     padding: 40px;
@@ -25,7 +25,7 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px); 
 }
-
+        
 /* Header & Title */
 .btn-back {
     background: rgba(255, 255, 255, 0.1);
@@ -62,7 +62,7 @@
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid #FAF0E6;
-    margin-bottom: 30px;
+    margin: 0 auto 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 

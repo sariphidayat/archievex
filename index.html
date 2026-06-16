@@ -5,11 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ArchieveX - Baca Komik Favoritmu</title>
+    
     <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="output.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Prompt:wght@700&display=swap"
         rel="stylesheet">
 
-    <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="assets/js/alpine.min.js"></script>
 </head>
 
@@ -19,7 +20,7 @@
         <div class="flex items-center gap-6">
             <a href="index.html" class="flex items-center">
                 <img src="assets/gambar/icon.png"
-                    class="w-[150px] md:w-[220px] h-auto object-contain block scale-125 origin-left" alt="Logo" />
+                    class="w-[150px] sm:-ml-6 md:ml-0 md:w-[220px] h-auto object-contain block scale-125 origin-left" alt="Logo" />
             </a>
 
             <nav id="mobile-menu" :class="{'hidden': !mobileMenuOpen, 'flex': mobileMenuOpen}"
@@ -29,14 +30,15 @@
                 <a href="bookmark.html" class="hover:text-purple-600 transition">Bookmark</a>
                 <div class="hidden md:block w-px h-4 bg-gray-300"></div>
                 <a href="about.html" class="hover:text-purple-600 transition">About</a>
+                <a :href="isAuthenticated() ? 'account.html' : 'auth.html'" class="md:hidden hover:text-purple-600 transition"><span x-text="isAuthenticated() ? 'Account' : 'Login'"></span></a>
             </nav>
         </div>
 
         <div class="flex items-center gap-4">
             <div class="flex items-center bg-white px-3 py-1 rounded-full border border-gray-200">
                 <input type="text" id="search-input" x-model="searchQuery" placeholder="Cari komik..."
-                    class="bg-transparent outline-none text-xs w-24 md:w-32 text-gray-700">
-                <img src="assets/gambar/search.png" class="w-4 h-4 opacity-40" alt="Search">
+                    class="bg-transparent outline-none text-xs h-8 w-24 md:w-36 pl-2 text-gray-700">
+                <img src="assets/gambar/search.png" class="w-4 h-4 opacity-40 ml-2" alt="Search">
             </div>
             <template x-if="!isAuthenticated()">
                 <a href="auth.html" class="hidden md:inline text-sm font-semibold text-[#333333] hover:text-purple-600 transition">Login</a>

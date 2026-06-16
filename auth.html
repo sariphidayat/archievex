@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ArchieveX - Masuk / Daftar</title>
+    
+    <link rel="stylesheet" href="output.css">
     <link rel="stylesheet" href="assets/css/index.css" />
     <link rel="stylesheet" href="assets/css/auth.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Prompt:wght@700&display=swap" rel="stylesheet">
@@ -11,25 +13,33 @@
 </head>
 <body class="auth-page" x-data="authApp()">
 
-    <header class="navbar">
-        <div class="header-left">
-            <a href="index.html">
-                <img src="assets/gambar/icon.png" class="logo-icon" alt="Logo ArchieveX" />
+    <header class="fixed top-0 z-[100] w-full h-16 md:h-20 bg-[#FFF8EE] flex items-center justify-between px-4 md:px-10 shadow-lg">
+        <div class="flex items-center gap-6">
+            <a href="index.html" class="flex items-center">
+                <img src="assets/gambar/icon.png"
+                    class="w-[150px] sm:-ml-6 md:ml-0 md:w-[220px] h-auto object-contain block scale-125 origin-left" alt="Logo" />
             </a>
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <div class="divider"></div>
-                <a href="bookmark.html">Bookmark</a>
-                <div class="divider"></div>
-                <a href="about.html">About</a>
+
+            <nav id="mobile-menu" :class="{'hidden': !mobileMenuOpen, 'flex': mobileMenuOpen}"
+                class="absolute top-16 left-0 w-full bg-[#FFF8EE] flex-col p-4 gap-4 shadow-lg md:static md:flex md:flex-row md:w-auto md:p-0 md:shadow-none md:top-auto text-[#333333] font-semibold text-sm">
+                <a href="index.html" class="hover:text-purple-600 transition">Home</a>
+                <div class="hidden md:block w-px h-4 bg-gray-300"></div>
+                <a href="bookmark.html" class="hover:text-purple-600 transition">Bookmark</a>
+                <div class="hidden md:block w-px h-4 bg-gray-300"></div>
+                <a href="about.html" class="hover:text-purple-600 transition">About</a>
+                <a :href="isAuthenticated() ? 'account.html' : 'auth.html'" class="md:hidden hover:text-purple-600 transition"><span x-text="isAuthenticated() ? 'Account' : 'Login'"></span></a>
             </nav>
         </div>
 
-        <div class="nav-icons">
-            <div class="search-container">
-                <input type="text" placeholder="Cari komik..." class="search-input" />
-                <img src="assets/gambar/search.png" alt="Search" class="icon-small" />
-            </div>
+        <div class="flex items-center gap-4">
+            <template x-if="isAuthenticated()">
+                <a href="account.html"><img src="assets/gambar/Setting.png" class="w-6 h-6 opacity-80 hover:opacity-100 transition" alt="Settings"></a>
+            </template>
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden flex flex-col gap-1">
+                <div class="w-6 h-0.5 bg-gray-800"></div>
+                <div class="w-6 h-0.5 bg-gray-800"></div>
+                <div class="w-6 h-0.5 bg-gray-800"></div>
+            </button>
         </div>
     </header>
 

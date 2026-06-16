@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ArchieveX - Bookmarks</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="output.css">
     <script defer src="assets/js/alpine.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Prompt:wght@700&display=swap" rel="stylesheet">
     <style>
@@ -18,8 +19,7 @@
         <div class="flex items-center gap-6">
             <a href="index.html" class="flex items-center">
                 <img src="assets/gambar/icon.png"
-                class="w-[150px] md:w-[220px] h-auto object-contain block scale-125 origin-left"
-                alt="Logo">
+                    class="w-[150px] sm:-ml-6 md:ml-0 md:w-[220px] h-auto object-contain block scale-125 origin-left" alt="Logo" />
             </a>
 
             <nav id="mobile-menu"
@@ -30,6 +30,7 @@
                 <a href="bookmark.html" class="hover:text-purple-600 transition">Bookmark</a>
                 <div class="hidden md:block w-px h-4 bg-gray-300"></div>
                 <a href="about.html" class="hover:text-purple-600 transition">About</a>
+                <a :href="isAuthenticated() ? 'account.html' : 'auth.html'" class="md:hidden hover:text-purple-600 transition"><span x-text="isAuthenticated() ? 'Account' : 'Login'"></span></a>
             </nav>
         </div>
 

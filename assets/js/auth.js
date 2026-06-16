@@ -1,4 +1,6 @@
 const API_BASE = 'https://archievex-be.fastapicloud.dev';
+
+// development only
 // const API_BASE = 'http://localhost:8000';
 
 const TOKEN_KEY = 'access_token';
@@ -54,6 +56,7 @@ function authApp() {
         error: '',
         success: '',
         errors: {},
+        mobileMenuOpen: false,
 
         switchToRegister() {
             this.isLogin = false;

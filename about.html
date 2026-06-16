@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ArchieveX - About Us</title>
     
-    <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="assets/js/alpine.min.js"></script>
+    <link rel="stylesheet" href="output.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Prompt:wght@700&display=swap" rel="stylesheet">
     
     <style>
@@ -26,7 +26,7 @@
         <div class="flex items-center gap-6">
             <a href="index.html" class="flex items-center">
                 <img src="assets/gambar/icon.png"
-                    class="w-[150px] md:w-[220px] h-auto object-contain block scale-125 origin-left" alt="Logo" />
+                    class="w-[150px] sm:-ml-6 md:ml-0 md:w-[220px] h-auto object-contain block scale-125 origin-left" alt="Logo" />
             </a>
 
             <nav id="mobile-menu" :class="{'hidden': !mobileMenuOpen, 'flex': mobileMenuOpen}"
@@ -36,20 +36,23 @@
                 <a href="bookmark.html" class="hover:text-purple-600 transition">Bookmark</a>
                 <div class="hidden md:block w-px h-4 bg-gray-300"></div>
                 <a href="about.html" class="hover:text-purple-600 transition">About</a>
+                <a :href="isAuthenticated() ? 'account.html' : 'auth.html'" class="md:hidden hover:text-purple-600 transition"><span x-text="isAuthenticated() ? 'Account' : 'Login'"></span></a>
             </nav>
         </div>
 
-        <template x-if="!isAuthenticated()">
-            <a href="auth.html" class="hidden md:inline text-sm font-semibold text-[#333] hover:text-purple-600 transition">Login</a>
-        </template>
-        <template x-if="isAuthenticated()">
-            <a href="account.html"><img src="assets/gambar/Setting.png" class="w-6 h-6 opacity-80 hover:opacity-100 transition" alt="Settings"></a>
-        </template>
-        <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden flex flex-col gap-1">
-            <div class="w-6 h-0.5 bg-gray-800"></div>
-            <div class="w-6 h-0.5 bg-gray-800"></div>
-            <div class="w-6 h-0.5 bg-gray-800"></div>
-        </button>
+        <div class="flex items-center gap-4">
+            <template x-if="!isAuthenticated()">
+                <a href="auth.html" class="hidden md:inline text-sm font-semibold text-[#333] hover:text-purple-600 transition">Login</a>
+            </template>
+            <template x-if="isAuthenticated()">
+                <a href="account.html"><img src="assets/gambar/Setting.png" class="w-6 h-6 opacity-80 hover:opacity-100 transition" alt="Settings"></a>
+            </template>
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden flex flex-col gap-1">
+                <div class="w-6 h-0.5 bg-gray-800"></div>
+                <div class="w-6 h-0.5 bg-gray-800"></div>
+                <div class="w-6 h-0.5 bg-gray-800"></div>
+            </button>
+        </div>
     </header>
 
     <main class="pt-24 pb-10 px-4 max-w-[780px] mx-auto">
